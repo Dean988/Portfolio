@@ -11,7 +11,7 @@ const translations = {
     "nav.contact": "Contact",
     "nav.cta": "Start a conversation",
     "hero.eyebrow": "Independent AI strategy studio",
-    "hero.title": "Strategic generative systems shaped by sociology, governance, and engineering rigour.",
+    "hero.title": "Strategic generative systems shaped by sociology, governance, and operational rigour.",
     "hero.body":
       "I'm Dino Di Emidio. I translate field research and infrastructure design into professional AI programs, ensuring every workflow stays auditable, ethical, and adaptable for leadership teams.",
     "hero.tag1": "Advisory & architecture",
@@ -44,7 +44,7 @@ const translations = {
     "services.advisory.point1": "Executive briefings and readiness audits",
     "services.advisory.point2": "Policy-aligned roadmaps with accountable KPIs",
     "services.advisory.point3": "Communication kits for boards and teams",
-    "services.infrastructure.title": "Infrastructure engineering",
+    "services.infrastructure.title": "Infrastructure orchestration",
     "services.infrastructure.body":
       "Modular RAG, agent, and evaluation stacks with documentation and controls suitable for regulated teams.",
     "services.infrastructure.point1": "Azure/AWS blueprints with observability baselines",
@@ -57,7 +57,7 @@ const translations = {
     "services.insight.point2": "Culture and signal monitoring for change management",
     "services.insight.point3": "Enablement sessions and narrative documentation",
     "about.eyebrow": "Profile",
-    "about.title": "Sociologist-engineer delivering grounded AI outcomes.",
+    "about.title": "Sociologist delivering grounded AI outcomes.",
     "about.body":
       "My training spans sociology, social data science, and an AI & management Master at Politecnico di Torino. I pair ethnographic research with infrastructure design so leaders receive solutions that are technically sound, culturally aware, and documented for long-term governance.",
     "about.pill1": "Prompt architecture & RAG",
@@ -100,7 +100,7 @@ const translations = {
     "nav.contact": "Contatti",
     "nav.cta": "Avvia una conversazione",
     "hero.eyebrow": "Studio indipendente di strategia AI",
-    "hero.title": "Sistemi generativi strategici guidati da sociologia, governance e ingegneria.",
+    "hero.title": "Sistemi generativi strategici guidati da sociologia, governance e rigore operativo.",
     "hero.body":
       "Sono Dino Di Emidio. Traduco ricerca sul campo e design infrastrutturale in programmi di IA professionali, così ogni flusso rimane verificabile, etico e adattabile per i vertici aziendali.",
     "hero.tag1": "Consulenza e architettura",
@@ -133,7 +133,7 @@ const translations = {
     "services.advisory.point1": "Briefing per executive e audit di readiness",
     "services.advisory.point2": "Roadmap aderenti alle policy con KPI responsabilizzati",
     "services.advisory.point3": "Kit di comunicazione per board e team",
-    "services.infrastructure.title": "Ingegneria infrastrutturale",
+    "services.infrastructure.title": "Orchestrazione infrastrutturale",
     "services.infrastructure.body":
       "Stack RAG, agenti ed evaluation modulari con documentazione e controlli per team regolamentati.",
     "services.infrastructure.point1": "Blueprint Azure/AWS con baseline di osservabilità",
@@ -146,7 +146,7 @@ const translations = {
     "services.insight.point2": "Monitoraggio culturale e change management",
     "services.insight.point3": "Sessioni di enablement e documentazione narrativa",
     "about.eyebrow": "Profilo",
-    "about.title": "Sociologo-ingegnere che consegna risultati di IA concreti.",
+    "about.title": "Sociologo che consegna risultati di IA concreti.",
     "about.body":
       "Il mio percorso attraversa sociologia, social data science e un Master in AI & Management al Politecnico di Torino. Unisco ricerca etnografica e design infrastrutturale per offrire soluzioni solide, consapevoli del contesto e documentate per la governance nel tempo.",
     "about.pill1": "Architettura di prompt & RAG",
@@ -283,6 +283,69 @@ const serviceCards = Array.from(document.querySelectorAll(".service-card"));
 const mobileBreakpoint = 720;
 let isMobileLayout = null;
 
+const cleanupPanelTransition = (panel) => {
+  if (!panel || !panel._heightTransitionHandler) return;
+  panel.removeEventListener("transitionend", panel._heightTransitionHandler);
+  panel._heightTransitionHandler = null;
+};
+
+const adjustPanelHeight = (panel, expand, animate = true) => {
+  if (!panel) return;
+  if (!animate) {
+    panel.style.transition = "none";
+  }
+
+  cleanupPanelTransition(panel);
+
+  if (expand) {
+    panel.style.height = `${panel.scrollHeight}px`;
+    const handleTransitionEnd = (event) => {
+      if (event.propertyName !== "height") return;
+      panel.style.height = "auto";
+      cleanupPanelTransition(panel);
+    };
+    panel._heightTransitionHandler = handleTransitionEnd;
+    panel.addEventListener("transitionend", handleTransitionEnd);
+  } else {
+    if (panel.style.height === "" || panel.style.height === "auto") {
+      panel.style.height = `${panel.scrollHeight}px`;
+      panel.offsetHeight;
+    }
+    panel.style.height = "0px";
+  }
+
+  if (!animate) {
+    panel.offsetHeight;
+    if (expand) {
+      panel.style.height = "auto";
+    }
+    requestAnimationFrame(() => {
+      panel.style.removeProperty("transition");
+    });
+  }
+};
+
+const setCardExpansion = (card, expand, { animate = true } = {}) => {
+  const toggle = card.querySelector(".service-toggle");
+  const panel = card.querySelector(".service-details ul");
+  if (expand) {
+    card.classList.add("expanded");
+  } else {
+    card.classList.remove("expanded");
+  }
+  if (toggle) {
+    toggle.setAttribute("aria-expanded", expand.toString());
+  }
+
+  if (card.classList.contains("collapsible")) {
+    adjustPanelHeight(panel, expand, animate);
+  } else if (panel) {
+    cleanupPanelTransition(panel);
+    panel.style.height = "";
+    panel.style.removeProperty("transition");
+  }
+};
+
 const updateServiceCards = () => {
   const collapse = window.innerWidth <= mobileBreakpoint;
   if (collapse === isMobileLayout) {
@@ -301,12 +364,10 @@ const updateServiceCards = () => {
     if (!toggle) return;
     if (collapse) {
       card.classList.add("collapsible");
-      card.classList.remove("expanded");
-      toggle.setAttribute("aria-expanded", "false");
+      setCardExpansion(card, false, { animate: false });
     } else {
       card.classList.remove("collapsible");
-      card.classList.add("expanded");
-      toggle.setAttribute("aria-expanded", "true");
+      setCardExpansion(card, true, { animate: false });
     }
   });
 };
@@ -316,8 +377,8 @@ serviceCards.forEach((card) => {
   if (!toggle) return;
   toggle.addEventListener("click", () => {
     if (!card.classList.contains("collapsible")) return;
-    card.classList.toggle("expanded");
-    toggle.setAttribute("aria-expanded", card.classList.contains("expanded").toString());
+    const expand = !card.classList.contains("expanded");
+    setCardExpansion(card, expand);
   });
 });
 
