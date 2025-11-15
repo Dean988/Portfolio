@@ -61,6 +61,51 @@ if (cursorCloud && pointerFine.matches && !reduceMotion.matches) {
   cursorCloud.style.display = "none";
 }
 
+const serviceCards = Array.from(document.querySelectorAll(".service-card"));
+const mobileBreakpoint = 720;
+let isMobileLayout = null;
+
+const updateServiceCards = () => {
+  const collapse = window.innerWidth <= mobileBreakpoint;
+  if (collapse === isMobileLayout) {
+    serviceCards.forEach((card) => {
+      const toggle = card.querySelector(".service-toggle");
+      if (toggle && card.classList.contains("collapsible")) {
+        toggle.setAttribute("aria-expanded", card.classList.contains("expanded").toString());
+      }
+    });
+    return;
+  }
+  isMobileLayout = collapse;
+
+  serviceCards.forEach((card) => {
+    const toggle = card.querySelector(".service-toggle");
+    if (!toggle) return;
+    if (collapse) {
+      card.classList.add("collapsible");
+      card.classList.remove("expanded");
+      toggle.setAttribute("aria-expanded", "false");
+    } else {
+      card.classList.remove("collapsible");
+      card.classList.add("expanded");
+      toggle.setAttribute("aria-expanded", "true");
+    }
+  });
+};
+
+serviceCards.forEach((card) => {
+  const toggle = card.querySelector(".service-toggle");
+  if (!toggle) return;
+  toggle.addEventListener("click", () => {
+    if (!card.classList.contains("collapsible")) return;
+    card.classList.toggle("expanded");
+    toggle.setAttribute("aria-expanded", card.classList.contains("expanded").toString());
+  });
+});
+
+window.addEventListener("resize", updateServiceCards);
+updateServiceCards();
+
 document.querySelectorAll("[data-scroll-target]").forEach((element) => {
   element.addEventListener("click", () => {
     const target = document.querySelector(element.dataset.scrollTarget);

@@ -362,19 +362,65 @@ main {
   height: 100%;
 }
 
-.service-card h3 {
-  margin-top: 0;
+.service-details {
+  margin-top: auto;
+}
+
+.service-details ul {
+  padding-left: 1.3rem;
+  margin: 0.6rem 0 0;
 }
 
 .service-card ul {
-  padding-left: 1.3rem;
   margin-bottom: 0;
-  margin-top: 0.5rem;
+  color: var(--text-muted);
 }
 
-.service-card li {
-  margin-bottom: 0.35rem;
-  color: var(--text-muted);
+.service-toggle {
+  display: none;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-small);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .service-card.collapsible .service-toggle {
+    display: flex;
+  }
+
+  .service-card.collapsible ul {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease, opacity 0.25s ease;
+  }
+
+  .service-card.collapsible.expanded ul {
+    max-height: 320px;
+    opacity: 1;
+    margin-top: 0.6rem;
+  }
+
+  .service-card.collapsible .service-toggle::after {
+    content: "+";
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .service-card.collapsible.expanded .service-toggle::after {
+    content: "−";
+  }
+}
+
+.service-card h3 {
+  margin-top: 0;
 }
 
 .about {
@@ -594,10 +640,6 @@ main {
 }
 
 @media (max-width: 900px) {
-  .cursor-ribbon {
-    display: none;
-  }
-
   .site-header {
     flex-wrap: wrap;
     position: static;
@@ -617,38 +659,43 @@ main {
   }
 }
 
-@media (max-width: 600px) {
-  .cursor-ribbon {
-    display: none;
-  }
-
+@media (max-width: 700px) {
   .banner {
     padding: 2rem;
   }
 
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-
   .services-grid,
-  .pipeline {
-    grid-template-columns: 1fr;
-  }
-
+  .pipeline,
+  .hero-grid,
+  .cta,
   .social-buttons {
     grid-template-columns: 1fr;
+  }
+
+  .hero-tags span {
+    width: 100%;
   }
 
   .hero-actions {
     flex-direction: column;
   }
 
-  .cta {
-    grid-template-columns: 1fr;
+  .clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
-  .hero-tags span {
-    width: 100%;
+  .clamp-4 {
+    -webkit-line-clamp: 4;
+  }
+
+  .clamp-5 {
+    -webkit-line-clamp: 5;
+  }
+
+  .pipeline-step .clamp-4 {
+    -webkit-line-clamp: 3;
   }
 }
 
