@@ -699,6 +699,139 @@ main {
   }
 }
 
+@media (max-width: 600px) {
+  body {
+    padding-bottom: 3rem;
+  }
+
+  main,
+  .site-header,
+  .site-footer {
+    width: min(520px, 92vw);
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .primary-nav {
+    width: 100%;
+    justify-content: stretch;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+
+  .primary-nav a {
+    padding: 0.75rem 0.5rem;
+    border-radius: var(--radius-small);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(5, 6, 11, 0.4);
+  }
+
+  .site-header .cta-button {
+    width: 100%;
+  }
+
+  .hero {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-tags {
+    justify-content: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .cta-button,
+  .hero-actions .ghost-button {
+    width: 100%;
+  }
+
+  .banner {
+    border-radius: var(--radius-medium);
+    padding: 1.75rem;
+  }
+
+  .hero-grid,
+  .services-grid,
+  .pipeline,
+  .principles {
+    grid-template-columns: unset;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(240px, 85vw);
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 0 0.75rem 0.75rem;
+    margin: 0 -0.75rem;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .pipeline {
+    grid-auto-columns: minmax(220px, 80vw);
+  }
+
+  .hero-grid > *,
+  .services-grid > *,
+  .pipeline > *,
+  .principles > * {
+    scroll-snap-align: start;
+  }
+
+  .hero-grid::-webkit-scrollbar,
+  .services-grid::-webkit-scrollbar,
+  .pipeline::-webkit-scrollbar,
+  .principles::-webkit-scrollbar {
+    display: none;
+  }
+
+  .social-buttons {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 0 0.75rem 0.75rem;
+    margin: 0 -0.75rem;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .social-buttons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .social-buttons a {
+    flex: 0 0 calc(85vw - 1.5rem);
+    scroll-snap-align: start;
+  }
+
+  .about,
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-panel {
+    text-align: center;
+  }
+
+  .pill-row {
+    justify-content: center;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
