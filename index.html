@@ -26,76 +26,76 @@
         <span>Di Emidio</span>
       </div>
       <nav class="primary-nav">
-        <a href="#services">Services</a>
-        <a href="#about">Profile</a>
-        <a href="#infrastructure">Infrastructure</a>
-        <a href="#connect">Contact</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#about" data-i18n="nav.profile">Profile</a>
+        <a href="#infrastructure" data-i18n="nav.infrastructure">Infrastructure</a>
+        <a href="#connect" data-i18n="nav.contact">Contact</a>
       </nav>
-      <a class="cta-button" href="mailto:diemidiodino@gmail.com"
-        >Work together</a
-      >
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language toggle">
+          <button type="button" class="lang-button is-active" data-lang-button="en" aria-pressed="true">
+            EN
+          </button>
+          <button type="button" class="lang-button" data-lang-button="it" aria-pressed="false">
+            IT
+          </button>
+        </div>
+        <a class="cta-button" href="mailto:diemidiodino@gmail.com" data-i18n="nav.cta">Work together</a>
+      </div>
     </header>
 
     <main>
       <section class="hero banner cloud-lilac" id="top">
         <div class="hero-content">
-          <p class="eyebrow">Generative Intelligence with Social Insight</p>
-          <h1>
-            Human-centered AI infrastructures sculpted by sociology, data science,
-            and advanced engineering.
+          <p class="eyebrow" data-i18n="hero.eyebrow">Generative Intelligence with Social Insight</p>
+          <h1 data-i18n="hero.title">
+            Human-centered AI infrastructures sculpted by sociology, data science, and advanced engineering.
           </h1>
-          <p class="lede clamp clamp-4">
-            I'm Dino Di Emidio, an AI consultant with a sociological background.
-            I carry years of hands-on work in generative and predictive systems,
-            yet I approach every collaboration with humility: I listen first,
-            learn the rhythm of your teams, and quietly align technology with
-            what matters to people.
+          <p class="lede" data-i18n="hero.body">
+            I'm Dino Di Emidio, an AI consultant with a sociological background. I carry years of hands-on work in generative
+            and predictive systems, yet I approach every collaboration with humility: I listen first, learn the rhythm of your
+            teams, and quietly align technology with what matters to people.
           </p>
           <div class="hero-tags">
-            <span>Generative AI Consulting</span>
-            <span>Intelligent Infrastructure</span>
-            <span>Ethical Strategy</span>
+            <span data-i18n="hero.tag1">Generative AI Consulting</span>
+            <span data-i18n="hero.tag2">Intelligent Infrastructure</span>
+            <span data-i18n="hero.tag3">Ethical Strategy</span>
           </div>
           <div class="hero-actions">
-            <a class="cta-button" href="mailto:diemidiodino@gmail.com">
-              Schedule a strategy call
-            </a>
-            <button class="ghost-button" data-scroll-target="#services">
+            <a class="cta-button" href="mailto:diemidiodino@gmail.com" data-i18n="hero.primaryCta">Schedule a strategy call</a>
+            <button class="ghost-button" data-scroll-target="#services" data-i18n="hero.secondaryCta">
               Discover the services
             </button>
           </div>
         </div>
         <div class="hero-grid">
           <article class="stat-card banner cloud-cyan">
-            <p class="stat-eyebrow">Foundational Degree</p>
-            <h3>Bachelor's in Sociology</h3>
-            <p>
-              Empathy-driven research, quantitative analysis, and the ability to
-              read societal shifts before they become datasets.
+            <p class="stat-eyebrow" data-i18n="stats.degree.label">Foundational Degree</p>
+            <h3 data-i18n="stats.degree.title">Bachelor's in Sociology</h3>
+            <p data-i18n="stats.degree.body">
+              Empathy-driven research, quantitative analysis, and the ability to read societal shifts before they become
+              datasets.
             </p>
           </article>
           <article class="stat-card banner cloud-amber">
-            <p class="stat-eyebrow">Advanced Research</p>
-            <h3>Master's in Social Data Science</h3>
-            <p>
-              A 360° command of statistical modeling, large-scale data
-              architectures, and social signal decoding.
+            <p class="stat-eyebrow" data-i18n="stats.research.label">Advanced Research</p>
+            <h3 data-i18n="stats.research.title">Master's in Social Data Science</h3>
+            <p data-i18n="stats.research.body">
+              A 360-degree command of statistical modeling, large-scale data architectures, and social signal decoding.
             </p>
           </article>
           <article class="stat-card banner cloud-iris">
-            <p class="stat-eyebrow">Executive Mastery</p>
-            <h3>Second-Level Master in AI &amp; Management</h3>
-            <p>
-              Politecnico di Torino honors graduate, bridging cutting-edge AI
-              engineering with decision-grade governance.
+            <p class="stat-eyebrow" data-i18n="stats.mastery.label">Executive Mastery</p>
+            <h3 data-i18n="stats.mastery.title">Second-Level Master in AI &amp; Management</h3>
+            <p data-i18n="stats.mastery.body">
+              Politecnico di Torino honors graduate, bridging cutting-edge AI engineering with decision-grade governance.
             </p>
           </article>
           <article class="stat-card hero-tenure banner cloud-ember">
-            <p class="stat-eyebrow">Experience</p>
-            <h3>Years in the AI field</h3>
-            <p>
-              Trusted partner for organizations seeking resilient, human-aware
-              intelligence solutions.
+            <p class="stat-eyebrow" data-i18n="stats.experience.label">Experience</p>
+            <h3 data-i18n="stats.experience.title">Years in the AI field</h3>
+            <p data-i18n="stats.experience.body">
+              Trusted partner for organizations seeking resilient, human-aware intelligence solutions.
             </p>
           </article>
         </div>
@@ -103,52 +103,50 @@
 
       <section class="services" id="services">
         <div class="section-heading">
-          <p class="eyebrow">Consulting Focus</p>
-          <h2>AI services engineered for clarity, creativity, and control.</h2>
+          <p class="eyebrow" data-i18n="services.eyebrow">Consulting Focus</p>
+          <h2 data-i18n="services.title">AI services engineered for clarity, creativity, and control.</h2>
         </div>
         <div class="services-grid">
           <article class="service-card banner cloud-iris">
-            <h3>Generative AI Advisory</h3>
-            <p>
-              Narrative-driven prompt ecosystems, fine-tuning roadmaps, and
-              policy-aware deployments designed to fit your mission.
+            <h3 data-i18n="services.advisory.title">Generative AI Advisory</h3>
+            <p data-i18n="services.advisory.body">
+              Narrative-driven prompt ecosystems, fine-tuning roadmaps, and policy-aware deployments designed to fit your
+              mission.
             </p>
             <div class="service-details">
-              <button class="service-toggle" type="button">Focus points</button>
+              <button class="service-toggle" type="button" data-i18n="services.toggle">Focus points</button>
               <ul>
-                <li>LLM design sprints with stakeholder alignment</li>
-                <li>Knowledge-graph powered RAG blueprints</li>
-                <li>Ethical guardrails anchored in sociological research</li>
+                <li data-i18n="services.advisory.point1">Blueprints for product-grade prompt libraries and agent ops</li>
+                <li data-i18n="services.advisory.point2">RAG, evaluation, and safety architecture for bespoke copilots</li>
+                <li data-i18n="services.advisory.point3">Ethical guardrails anchored in sociological research</li>
               </ul>
             </div>
           </article>
           <article class="service-card banner cloud-ember">
-            <h3>Intelligent Infrastructure</h3>
-            <p>
-              Cloud-native patterns that stabilize generative workloads without
-              slowing innovation.
+            <h3 data-i18n="services.infrastructure.title">Intelligent Infrastructure</h3>
+            <p data-i18n="services.infrastructure.body">
+              Cloud-native patterns that stabilize generative workloads without slowing innovation.
             </p>
             <div class="service-details">
-              <button class="service-toggle" type="button">Focus points</button>
+              <button class="service-toggle" type="button" data-i18n="services.toggle">Focus points</button>
               <ul>
-                <li>Hybrid Azure/AWS stacks with observability hooks</li>
-                <li>Vector-native data estates and orchestration</li>
-                <li>Resilience kits for latency, privacy, and governance</li>
+                <li data-i18n="services.infrastructure.point1">Hybrid Azure/AWS stacks with observability hooks</li>
+                <li data-i18n="services.infrastructure.point2">Vector-native data estates and orchestration</li>
+                <li data-i18n="services.infrastructure.point3">Resilience kits for latency, privacy, and governance</li>
               </ul>
             </div>
           </article>
           <article class="service-card banner cloud-lilac">
-            <h3>Social Insight Labs</h3>
-            <p>
-              Research capsules that translate complex human behavior into AI
-              inputs people can trust.
+            <h3 data-i18n="services.insight.title">Social Insight Labs</h3>
+            <p data-i18n="services.insight.body">
+              Research capsules that translate complex human behavior into AI inputs people can trust.
             </p>
             <div class="service-details">
-              <button class="service-toggle" type="button">Focus points</button>
+              <button class="service-toggle" type="button" data-i18n="services.toggle">Focus points</button>
               <ul>
-                <li>Inclusive data collection and debiasing routines</li>
-                <li>Signal analysis for communities, culture, and policy</li>
-                <li>Immersive workshops to make AI adoption intuitive</li>
+                <li data-i18n="services.insight.point1">Inclusive data collection and debiasing routines</li>
+                <li data-i18n="services.insight.point2">Signal analysis for communities, culture, and policy</li>
+                <li data-i18n="services.insight.point3">Immersive workshops to make AI adoption intuitive</li>
               </ul>
             </div>
           </article>
@@ -158,45 +156,43 @@
       <section class="banner about cloud-amber" id="about">
         <div class="about-media">
           <div class="about-portrait-frame">
-            <img
-              src="images/pic.jpg"
-              alt="Portrait of Dino Di Emidio"
-              loading="lazy"
-              decoding="async"
-            />
+            <img src="images/pic.jpg" alt="Portrait of Dino Di Emidio" loading="lazy" decoding="async" />
           </div>
         </div>
         <div class="about-content">
-          <p class="eyebrow">Profile</p>
-          <h2>Sociologist by origin, AI strategist by evolution.</h2>
-          <p class="clamp clamp-5">
-            My practice is rooted in curiosity for people. Sociology taught me
-            to dissect systems of meaning; the Master's in Social Data Science
-            equipped me with the analytical tools to quantify them; and the
-            second-level Master in Artificial Intelligence &amp; Management
-            showed me how to translate those insights into boardroom-ready
-            decisions without losing empathy. Years in the field have blended
-            these disciplines into a shared compass, and I try to keep it humble
-            by measuring impact with the people who will live with the AI.
+          <p class="eyebrow" data-i18n="about.eyebrow">Profile</p>
+          <h2 data-i18n="about.title">Sociologist by origin, AI strategist by evolution.</h2>
+          <p data-i18n="about.body">
+            My practice is rooted in curiosity for people. Sociology taught me to dissect systems of meaning; the Master's in
+            Social Data Science equipped me with the analytical tools to quantify them; and the second-level Master in
+            Artificial Intelligence &amp; Management showed me how to translate those insights into boardroom-ready decisions
+            without losing empathy. Years in the field have blended these disciplines into a shared compass, and I try to keep
+            it humble by measuring impact with the people who will live with the AI.
           </p>
           <div class="pill-row">
-            <span class="pill">Prompt architecture &amp; RAG</span>
-            <span class="pill">Data storytelling</span>
-            <span class="pill">AI governance</span>
-            <span class="pill">Infra strategy</span>
+            <span class="pill" data-i18n="about.pill1">Prompt architecture &amp; RAG</span>
+            <span class="pill" data-i18n="about.pill2">Data storytelling</span>
+            <span class="pill" data-i18n="about.pill3">AI governance</span>
+            <span class="pill" data-i18n="about.pill4">Infra strategy</span>
           </div>
           <div class="principles">
             <article>
-              <h3>Human pulse</h3>
-              <p>Every model is evaluated for the people, cultures, and policies it touches.</p>
+              <h3 data-i18n="about.principle1.title">Human pulse</h3>
+              <p data-i18n="about.principle1.body">
+                Every model is evaluated for the people, cultures, and policies it touches.
+              </p>
             </article>
             <article>
-              <h3>Clarity</h3>
-              <p>Complex systems are translated into intuitive rituals for your teams.</p>
+              <h3 data-i18n="about.principle2.title">Clarity</h3>
+              <p data-i18n="about.principle2.body">
+                Complex systems are translated into intuitive rituals for your teams.
+              </p>
             </article>
             <article>
-              <h3>Continuity</h3>
-              <p>Roadmaps include governance, measurement, and iteration from day one.</p>
+              <h3 data-i18n="about.principle3.title">Continuity</h3>
+              <p data-i18n="about.principle3.body">
+                Roadmaps include governance, measurement, and iteration from day one.
+              </p>
             </article>
           </div>
         </div>
@@ -204,81 +200,78 @@
 
       <section class="infrastructure" id="infrastructure">
         <div class="section-heading">
-          <p class="eyebrow">Blueprint</p>
-          <h2>An opinionated path to intelligent generative infrastructure.</h2>
+          <p class="eyebrow" data-i18n="infra.eyebrow">Blueprint</p>
+          <h2 data-i18n="infra.title">An opinionated path to intelligent generative infrastructure.</h2>
         </div>
         <div class="pipeline">
           <article class="pipeline-step banner cloud-cyan">
             <span>01</span>
-            <h3>Sense</h3>
-          <p class="clamp clamp-4">
-            Read organizational signals, policies, and social impact metrics
-            to map the real constraints before writing a single line of code.
-          </p>
+            <h3 data-i18n="infra.step1.title">Sense</h3>
+            <p data-i18n="infra.step1.body">
+              Read organizational signals, policies, and social impact metrics to map the real constraints before writing a
+              single line of code.
+            </p>
           </article>
           <article class="pipeline-step banner cloud-ember">
             <span>02</span>
-            <h3>Shape</h3>
-          <p class="clamp clamp-4">
-            Orchestrate data estates, vector layers, and orchestration engines
-            that allow generative services to plug in without friction.
-          </p>
+            <h3 data-i18n="infra.step2.title">Shape</h3>
+            <p data-i18n="infra.step2.body">
+              Orchestrate data estates, vector layers, and orchestration engines that allow generative services to plug in
+              without friction.
+            </p>
           </article>
           <article class="pipeline-step banner cloud-lilac">
             <span>03</span>
-            <h3>Scale</h3>
-          <p class="clamp clamp-4">
-            Deploy monitoring, evaluation, and cultural rituals so the AI
-            stays explainable, performant, and socially meaningful.
-          </p>
+            <h3 data-i18n="infra.step3.title">Scale</h3>
+            <p data-i18n="infra.step3.body">
+              Deploy monitoring, evaluation, and cultural rituals so the AI stays explainable, performant, and socially
+              meaningful.
+            </p>
           </article>
         </div>
       </section>
 
       <section class="cta banner cloud-iris" id="connect">
         <div>
-          <p class="eyebrow">Let’s collaborate</p>
-          <h2>
-            Bring me your data, your aspirations, and the people you want to
-            empower.
-          </h2>
-          <p>
-            Together we can create generative ecosystems that respect context,
-            scale responsibly, and keep a human pulse at their core.
+          <p class="eyebrow" data-i18n="cta.eyebrow">Let's collaborate</p>
+          <h2 data-i18n="cta.title">Bring me your data, your aspirations, and the people you want to empower.</h2>
+          <p data-i18n="cta.body">
+            Together we can create generative ecosystems that respect context, scale responsibly, and keep a human pulse at
+            their core.
           </p>
         </div>
         <div class="cta-panel">
-          <a class="cta-button" href="mailto:diemidiodino@gmail.com"
-            >diemidiodino@gmail.com</a
-          >
-          <p>Available for strategic advisory, embedded projects, and talks.</p>
+          <a class="cta-button" href="mailto:diemidiodino@gmail.com">diemidiodino@gmail.com</a>
+          <p data-i18n="cta.caption">Available for strategic advisory, embedded projects, and talks.</p>
         </div>
       </section>
 
       <section class="social-hub banner cloud-lilac">
         <div class="section-heading">
-          <p class="eyebrow">Stay connected</p>
-          <h2>Follow the research, the builds, and the behind-the-scenes.</h2>
+          <p class="eyebrow" data-i18n="social.eyebrow">Stay connected</p>
+          <h2 data-i18n="social.title">Follow the research, the builds, and the behind-the-scenes.</h2>
         </div>
         <div class="social-buttons">
           <a href="https://www.linkedin.com/in/dinode/" target="_blank" rel="noreferrer noopener">
             <img src="images/icon-linkedin.svg" alt="LinkedIn" loading="lazy" decoding="async" />
-            <span class="label">LinkedIn</span>
+            <span class="label" data-i18n="social.linkedin">LinkedIn</span>
           </a>
           <a href="https://github.com/Dean988" target="_blank" rel="noreferrer noopener">
             <img src="images/icon-github.svg" alt="GitHub" loading="lazy" decoding="async" />
-            <span class="label">GitHub</span>
+            <span class="label" data-i18n="social.github">GitHub</span>
           </a>
           <a href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener">
             <img src="images/icon-instagram.svg" alt="Instagram" loading="lazy" decoding="async" />
-            <span class="label">Instagram</span>
+            <span class="label" data-i18n="social.instagram">Instagram</span>
           </a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>&copy; <span id="year"></span> Dino Di Emidio. All rights reserved.</p>
+      <p>
+        &copy; <span id="year"></span> <span data-i18n="footer.copy">Dino Di Emidio. All rights reserved.</span>
+      </p>
     </footer>
   </body>
 </html>
