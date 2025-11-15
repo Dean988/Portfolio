@@ -289,50 +289,61 @@ const cleanupPanelTransition = (panel) => {
   panel._heightTransitionHandler = null;
 };
 
+const instantHeight = (panel, expand) => {
+  panel.style.transition = "none";
+  panel.style.height = expand ? "auto" : "0px";
+  requestAnimationFrame(() => {
+    panel.style.removeProperty("transition");
+  });
+};
+
 const adjustPanelHeight = (panel, expand, animate = true) => {
   if (!panel) return;
-  if (!animate) {
-    panel.style.transition = "none";
-  }
 
   cleanupPanelTransition(panel);
 
-  if (expand) {
-    panel.style.height = `${panel.scrollHeight}px`;
-    const handleTransitionEnd = (event) => {
-      if (event.propertyName !== "height") return;
-      panel.style.height = "auto";
-      cleanupPanelTransition(panel);
-    };
-    panel._heightTransitionHandler = handleTransitionEnd;
-    panel.addEventListener("transitionend", handleTransitionEnd);
-  } else {
-    if (panel.style.height === "" || panel.style.height === "auto") {
-      panel.style.height = `${panel.scrollHeight}px`;
-      panel.offsetHeight;
-    }
-    panel.style.height = "0px";
+  if (!animate) {
+    instantHeight(panel, expand);
+    return;
   }
 
-  if (!animate) {
-    panel.offsetHeight;
+  const finalize = (event) => {
+    if (event.propertyName !== "height") return;
     if (expand) {
       panel.style.height = "auto";
     }
-    requestAnimationFrame(() => {
-      panel.style.removeProperty("transition");
-    });
-  }
+    cleanupPanelTransition(panel);
+  };
+
+  panel._heightTransitionHandler = finalize;
+  panel.addEventListener("transitionend", finalize);
+
+  const run = () => {
+    if (expand) {
+      const target = `${panel.scrollHeight}px`;
+      if (panel.style.height === "" || panel.style.height === "auto") {
+        panel.style.height = "0px";
+      }
+      requestAnimationFrame(() => {
+        panel.style.height = target;
+      });
+    } else {
+      const currentHeight = panel.scrollHeight;
+      panel.style.height = `${currentHeight}px`;
+      requestAnimationFrame(() => {
+        panel.style.height = "0px";
+      });
+    }
+  };
+
+  run();
 };
 
 const setCardExpansion = (card, expand, { animate = true } = {}) => {
   const toggle = card.querySelector(".service-toggle");
   const panel = card.querySelector(".service-details ul");
-  if (expand) {
-    card.classList.add("expanded");
-  } else {
-    card.classList.remove("expanded");
-  }
+  card.classList.toggle("expanded", expand);
+
   if (toggle) {
     toggle.setAttribute("aria-expanded", expand.toString());
   }
@@ -342,7 +353,6 @@ const setCardExpansion = (card, expand, { animate = true } = {}) => {
   } else if (panel) {
     cleanupPanelTransition(panel);
     panel.style.height = "";
-    panel.style.removeProperty("transition");
   }
 };
 
