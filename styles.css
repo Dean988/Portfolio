@@ -701,35 +701,35 @@ main {
 
 @media (max-width: 600px) {
   body {
-    padding-bottom: 3rem;
+    padding: 0 1rem 3rem;
   }
 
   main,
   .site-header,
   .site-footer {
-    width: min(520px, 92vw);
+    width: 100%;
   }
 
   .site-header {
     flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
+    align-items: center;
+    gap: 1.25rem;
     text-align: center;
+    padding: 1.5rem;
   }
 
   .primary-nav {
     width: 100%;
-    justify-content: stretch;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.6rem;
   }
 
   .primary-nav a {
-    padding: 0.75rem 0.5rem;
+    padding: 0.65rem 0.5rem;
     border-radius: var(--radius-small);
     border: 1px solid rgba(255, 255, 255, 0.16);
-    background: rgba(5, 6, 11, 0.4);
+    background: rgba(5, 6, 11, 0.55);
   }
 
   .site-header .cta-button {
@@ -737,16 +737,18 @@ main {
   }
 
   .hero {
-    text-align: center;
-    align-items: center;
+    text-align: left;
+    align-items: stretch;
+    padding: 2.2rem 1.25rem;
+    gap: 1.25rem;
   }
 
   .hero-content {
-    align-items: center;
+    align-items: flex-start;
   }
 
-  .hero-tags {
-    justify-content: center;
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 2.6rem);
   }
 
   .hero-actions {
@@ -761,74 +763,52 @@ main {
 
   .banner {
     border-radius: var(--radius-medium);
-    padding: 1.75rem;
+    padding: 1.6rem;
   }
 
   .hero-grid,
   .services-grid,
   .pipeline,
-  .principles {
-    grid-template-columns: unset;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(240px, 85vw);
-    overflow-x: auto;
+  .principles,
+  .social-buttons {
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 0;
     gap: 1rem;
-    padding: 0 0.75rem 0.75rem;
-    margin: 0 -0.75rem;
-    scroll-snap-type: x proximity;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .pipeline {
-    grid-auto-columns: minmax(220px, 80vw);
-  }
-
-  .hero-grid > *,
-  .services-grid > *,
-  .pipeline > *,
-  .principles > * {
-    scroll-snap-align: start;
-  }
-
-  .hero-grid::-webkit-scrollbar,
-  .services-grid::-webkit-scrollbar,
-  .pipeline::-webkit-scrollbar,
-  .principles::-webkit-scrollbar {
-    display: none;
   }
 
   .social-buttons {
-    display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    padding: 0 0.75rem 0.75rem;
-    margin: 0 -0.75rem;
-    scroll-snap-type: x proximity;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .social-buttons::-webkit-scrollbar {
-    display: none;
+    display: grid;
   }
 
   .social-buttons a {
-    flex: 0 0 calc(85vw - 1.5rem);
-    scroll-snap-align: start;
+    width: 100%;
   }
 
-  .about,
+  .about {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-media {
+    order: -1;
+  }
+
+  .about-portrait-frame {
+    width: min(260px, 80%);
+  }
+
   .cta {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .cta-panel {
-    text-align: center;
+    text-align: left;
   }
 
   .pill-row {
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
 
