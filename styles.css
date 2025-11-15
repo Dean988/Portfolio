@@ -569,14 +569,19 @@ button:focus-visible {
   }
 
   .service-card.collapsible ul {
-    height: 0;
+    --panel-height: 0px;
+    max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: height 0.35s ease, opacity 0.2s ease;
-    will-change: height;
+    transition: max-height 0.35s ease, opacity 0.2s ease;
+  }
+
+  .service-card.collapsible ul.no-transition {
+    transition: none !important;
   }
 
   .service-card.collapsible.expanded ul {
+    max-height: var(--panel-height);
     opacity: 1;
     margin-top: 0.6rem;
   }

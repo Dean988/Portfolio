@@ -283,86 +283,39 @@ const serviceCards = Array.from(document.querySelectorAll(".service-card"));
 const mobileBreakpoint = 720;
 let isMobileLayout = null;
 
-const cleanupPanelTransition = (panel) => {
-  if (!panel || !panel._heightTransitionHandler) return;
-  panel.removeEventListener("transitionend", panel._heightTransitionHandler);
-  panel._heightTransitionHandler = null;
-};
-
-const instantHeight = (panel, expand) => {
-  panel.style.transition = "none";
-  panel.style.height = expand ? "auto" : "0px";
-  requestAnimationFrame(() => {
-    panel.style.removeProperty("transition");
-  });
-};
-
-const adjustPanelHeight = (panel, expand, animate = true) => {
+const measurePanel = (panel) => {
   if (!panel) return;
-
-  cleanupPanelTransition(panel);
-
-  if (!animate) {
-    instantHeight(panel, expand);
-    return;
-  }
-
-  const finalize = (event) => {
-    if (event.propertyName !== "height") return;
-    if (expand) {
-      panel.style.height = "auto";
-    }
-    cleanupPanelTransition(panel);
-  };
-
-  panel._heightTransitionHandler = finalize;
-  panel.addEventListener("transitionend", finalize);
-
-  const run = () => {
-    if (expand) {
-      const target = `${panel.scrollHeight}px`;
-      if (panel.style.height === "" || panel.style.height === "auto") {
-        panel.style.height = "0px";
-      }
-      requestAnimationFrame(() => {
-        panel.style.height = target;
-      });
-    } else {
-      const currentHeight = panel.scrollHeight;
-      panel.style.height = `${currentHeight}px`;
-      requestAnimationFrame(() => {
-        panel.style.height = "0px";
-      });
-    }
-  };
-
-  run();
+  const height = panel.scrollHeight;
+  panel.style.setProperty("--panel-height", `${height}px`);
 };
 
 const setCardExpansion = (card, expand, { animate = true } = {}) => {
   const toggle = card.querySelector(".service-toggle");
   const panel = card.querySelector(".service-details ul");
-  card.classList.toggle("expanded", expand);
-
   if (toggle) {
     toggle.setAttribute("aria-expanded", expand.toString());
   }
 
-  if (card.classList.contains("collapsible")) {
-    adjustPanelHeight(panel, expand, animate);
-  } else if (panel) {
-    cleanupPanelTransition(panel);
-    panel.style.height = "";
+  if (card.classList.contains("collapsible") && panel) {
+    measurePanel(panel);
+    if (!animate) {
+      panel.classList.add("no-transition");
+      requestAnimationFrame(() => {
+        panel.classList.remove("no-transition");
+      });
+    }
   }
+
+  card.classList.toggle("expanded", expand);
 };
 
 const updateServiceCards = () => {
   const collapse = window.innerWidth <= mobileBreakpoint;
   if (collapse === isMobileLayout) {
     serviceCards.forEach((card) => {
-      const toggle = card.querySelector(".service-toggle");
-      if (toggle && card.classList.contains("collapsible")) {
-        toggle.setAttribute("aria-expanded", card.classList.contains("expanded").toString());
+      const panel = card.querySelector(".service-details ul");
+      if (panel && card.classList.contains("collapsible")) {
+        measurePanel(panel);
       }
     });
     return;
