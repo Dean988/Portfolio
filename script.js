@@ -283,54 +283,24 @@ const serviceCards = Array.from(document.querySelectorAll(".service-card"));
 const mobileBreakpoint = 720;
 let isMobileLayout = null;
 
-const measurePanel = (panel) => {
-  if (!panel) return;
-  const height = panel.scrollHeight;
-  panel.style.setProperty("--panel-height", `${height}px`);
-};
-
-const setCardExpansion = (card, expand, { animate = true } = {}) => {
-  const toggle = card.querySelector(".service-toggle");
-  const panel = card.querySelector(".service-details ul");
-  if (toggle) {
-    toggle.setAttribute("aria-expanded", expand.toString());
-  }
-
-  if (card.classList.contains("collapsible") && panel) {
-    measurePanel(panel);
-    if (!animate) {
-      panel.classList.add("no-transition");
-      requestAnimationFrame(() => {
-        panel.classList.remove("no-transition");
-      });
-    }
-  }
-
-  card.classList.toggle("expanded", expand);
-};
-
 const updateServiceCards = () => {
   const collapse = window.innerWidth <= mobileBreakpoint;
-  if (collapse === isMobileLayout) {
-    serviceCards.forEach((card) => {
-      const panel = card.querySelector(".service-details ul");
-      if (panel && card.classList.contains("collapsible")) {
-        measurePanel(panel);
-      }
-    });
-    return;
-  }
+  if (collapse === isMobileLayout) return;
   isMobileLayout = collapse;
 
   serviceCards.forEach((card) => {
     const toggle = card.querySelector(".service-toggle");
     if (!toggle) return;
     if (collapse) {
-      card.classList.add("collapsible");
-      setCardExpansion(card, false, { animate: false });
+      toggle.setAttribute("hidden", "true");
+      toggle.setAttribute("aria-hidden", "true");
+      toggle.setAttribute("tabindex", "-1");
+      card.classList.remove("collapsible", "expanded");
     } else {
-      card.classList.remove("collapsible");
-      setCardExpansion(card, true, { animate: false });
+      toggle.removeAttribute("hidden");
+      toggle.removeAttribute("aria-hidden");
+      toggle.removeAttribute("tabindex");
+      card.classList.add("collapsible", "expanded");
     }
   });
 };
@@ -340,8 +310,8 @@ serviceCards.forEach((card) => {
   if (!toggle) return;
   toggle.addEventListener("click", () => {
     if (!card.classList.contains("collapsible")) return;
-    const expand = !card.classList.contains("expanded");
-    setCardExpansion(card, expand);
+    card.classList.toggle("expanded");
+    toggle.setAttribute("aria-expanded", card.classList.contains("expanded").toString());
   });
 });
 

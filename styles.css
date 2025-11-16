@@ -328,9 +328,9 @@ button:focus-visible {
   isolation: isolate;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle at 15% 20%, rgba(115, 245, 255, 0.12), transparent 55%),
-    radial-gradient(circle at 75% 15%, rgba(192, 165, 255, 0.12), transparent 55%),
-    rgba(7, 9, 18, 0.65);
+  background: radial-gradient(circle at 15% 20%, rgba(115, 245, 255, 0.16), transparent 50%),
+    radial-gradient(circle at 70% 5%, rgba(192, 165, 255, 0.18), transparent 45%),
+    linear-gradient(160deg, rgba(8, 10, 22, 0.9), rgba(4, 5, 12, 0.8));
 }
 
 .hero::after {
@@ -616,37 +616,14 @@ button:focus-visible {
 }
 
 @media (max-width: 720px) {
-  .service-card.collapsible .service-toggle {
-    display: flex;
+  .service-card .service-toggle {
+    display: none;
   }
 
-  .service-card.collapsible ul {
-    --panel-height: 0px;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease, opacity 0.2s ease;
-  }
-
-  .service-card.collapsible ul.no-transition {
-    transition: none !important;
-  }
-
-  .service-card.collapsible.expanded ul {
-    max-height: var(--panel-height);
+  .service-card ul {
+    max-height: none;
     opacity: 1;
     margin-top: 0.6rem;
-  }
-
-  .service-card.collapsible .service-toggle::after {
-    content: "▾";
-    font-size: 1rem;
-    line-height: 1;
-    transition: transform 0.3s ease;
-  }
-
-  .service-card.collapsible.expanded .service-toggle::after {
-    transform: rotate(180deg);
   }
 }
 
@@ -1010,7 +987,9 @@ button:focus-visible {
     align-items: stretch;
     padding: 2.2rem 1.25rem;
     gap: 1rem;
-    background: linear-gradient(180deg, rgba(9, 11, 23, 0.95), rgba(4, 6, 15, 0.85));
+    background: radial-gradient(circle at 15% 20%, rgba(115, 245, 255, 0.25), transparent 50%),
+      radial-gradient(circle at 80% 8%, rgba(192, 165, 255, 0.2), transparent 45%),
+      linear-gradient(185deg, rgba(8, 10, 20, 0.92), rgba(3, 4, 10, 0.85));
   }
 
   .hero-content {
