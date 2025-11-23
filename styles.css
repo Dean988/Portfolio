@@ -639,8 +639,7 @@ nav {
   .expertise-layout {
     grid-template-columns: 1fr;
     gap: 30px;
-    padding: 20px;
-    /* Reduced padding on mobile */
+    padding: 25px;
   }
 
   .expertise-visual {
@@ -650,34 +649,104 @@ nav {
 
   .gif-container {
     min-height: 300px;
-    /* Taller on mobile too */
     max-height: 400px;
+  }
+
+  .hero {
+    padding-top: 100px;
+    /* More space for fixed header */
   }
 
   .hero h1 {
     font-size: 2.5rem;
     padding: 0 10px;
+    line-height: 1.1;
   }
 
   .hero p {
     font-size: 1rem;
-    padding: 0 20px;
+    padding: 0 10px;
   }
 
+  /* Optimize Resume/CV for Mobile */
+  .resume-container {
+    padding: 10px;
+    /* Minimal padding to maximize size */
+    background: transparent;
+    /* Remove boxy background to focus on card */
+    border: none;
+    margin-top: -20px;
+  }
+
+  .cv-wrapper {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 242, 255, 0.15);
+    transform: scale(1.02);
+    /* Slightly larger by default */
+    animation: floatCard 6s ease-in-out infinite;
+    /* Alive feel */
+  }
+
+  .cv-wrapper:active {
+    transform: scale(0.98);
+    /* Tactile feedback on tap */
+  }
+
+  .cv-overlay {
+    opacity: 1;
+    /* Always visible on mobile */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 60%);
+    align-items: flex-end;
+    padding-bottom: 25px;
+  }
+
+  .cv-overlay-text {
+    transform: translateY(0);
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    background: rgba(0, 242, 255, 0.15);
+    border: 1px solid rgba(0, 242, 255, 0.4);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Visual Breaks */
   .visual-break {
-    height: 25vh;
+    height: 30vh;
   }
 
   .visual-break.large-break {
-    height: 50vh;
-    width: 90%;
-  }
-
-  .card {
-    padding: 30px;
+    height: 55vh;
+    width: 100%;
+    /* Full width for immersion */
+    border-radius: 0;
+    /* Seamless look */
+    margin: 40px 0;
   }
 
   section {
     padding: 60px 0;
+  }
+
+  /* Adjust Expertise Items for touch */
+  .expertise-item {
+    padding: 25px;
+  }
+
+  .expertise-item:active {
+    background: rgba(255, 255, 255, 0.08);
+    transform: scale(0.98);
+  }
+}
+
+@keyframes floatCard {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1.02);
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1.02);
   }
 }
