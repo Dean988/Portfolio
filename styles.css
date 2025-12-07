@@ -771,6 +771,7 @@ a {
 
 
 /* --- Responsive Mobile --- */
+/* --- Responsive Mobile --- */
 @media (max-width: 900px) {
     .grid-layout {
         grid-template-columns: 1fr;
@@ -796,24 +797,31 @@ a {
 
     /* Fix for Character Lore visibility on mobile */
     .typing-effect p {
-        white-space: normal;
-        /* Allow wrap */
+        white-space: normal !important;
         animation: none !important;
-        /* Force disable typing */
-        width: 100%;
-        border: none;
+        width: 100% !important;
+        border: none !important;
         opacity: 1 !important;
-        /* Force visible */
+        visibility: visible !important;
         margin-bottom: 10px;
+        display: block !important;
+        color: var(--text-primary) !important;
     }
 
-    /* Disable delays to prevent lag/invisibility */
+    /* Disable all delays */
     .typing-effect p:nth-child(n) {
         animation: none !important;
+        opacity: 1 !important;
     }
 
     /* Fix Card Tilt on Mobile */
     .ability-card {
         transform: none !important;
+        transition: none !important;
+    }
+
+    /* Enhance readability on mobile */
+    .hud-panel {
+        padding: 15px;
     }
 }
