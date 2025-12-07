@@ -606,7 +606,81 @@ a {
     font-size: 0.9rem;
 }
 
-/* --- Animations --- */
+/* --- Special Abilities (Services) --- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.ability-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transition: transform 0.1s ease;
+    /* Fast for tilt */
+    cursor: default;
+}
+
+.ability-card:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: translateZ(20px);
+    /* Pop out */
+}
+
+.ability-card h4 {
+    color: var(--accent-primary);
+    font-size: 1rem;
+    margin-bottom: 8px;
+    transform: translateZ(10px);
+}
+
+.ability-card p {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.4;
+    transform: translateZ(5px);
+}
+
+.card-border {
+    position: absolute;
+    inset: 0;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+/* --- Particles --- */
+.particle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.8;
+    box-shadow: 0 0 5px var(--accent-primary);
+    animation: fadeParticle 1s forwards;
+}
+
+@keyframes fadeParticle {
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
 .fade-in {
     opacity: 0;
     transform: translateY(20px);

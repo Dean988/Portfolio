@@ -31,7 +31,39 @@ document.addEventListener('DOMContentLoaded', () => {
       holoImages.forEach(img => {
         img.style.transform = `translate(${-x}px, ${-y}px) scale(1.05)`;
       });
+
+      // Particle Trail
+      if (Math.random() > 0.8) { // Don't spawn too many
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.left = `${e.clientX}px`;
+        particle.style.top = `${e.clientY}px`;
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 1000);
+      }
     }
+  });
+
+  // 3D Tilt Effect for Cards
+  const cards = document.querySelectorAll('[data-tilt]');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -10; // Max 10 deg
+      const rotateY = ((x - centerX) / centerX) * 10;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+    });
   });
 
   console.log("System Online. Welcome, Player.");
