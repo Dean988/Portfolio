@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Profile: Dino Di Emidio</title>
     <meta name="description" content="Level 30 Data Scientist | RPG Style Portfolio">
-    
+
     <!-- Fonts: Rajdhani for HUD, Roboto Mono for Data -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
 
     <div class="scan-line"></div>
@@ -28,11 +32,15 @@
             <div class="status-bars">
                 <div class="bar-group">
                     <span class="label">HP</span>
-                    <div class="bar-container"><div class="bar-fill hp" style="width: 100%;"></div></div>
+                    <div class="bar-container">
+                        <div class="bar-fill hp" style="width: 100%;"></div>
+                    </div>
                 </div>
                 <div class="bar-group">
                     <span class="label">MP</span>
-                    <div class="bar-container"><div class="bar-fill mp" style="width: 85%;"></div></div>
+                    <div class="bar-container">
+                        <div class="bar-fill mp" style="width: 85%;"></div>
+                    </div>
                 </div>
                 <div class="bar-group">
                     <span class="label">LVL</span>
@@ -46,7 +54,7 @@
     </header>
 
     <main class="container grid-layout">
-        
+
         <!-- Left Column -->
         <aside class="sidebar">
             <!-- Avatar / Character Visual -->
@@ -60,7 +68,8 @@
                     <div class="avatar-overlay"></div>
                 </div>
                 <div class="social-links-hud">
-                    <a href="https://www.linkedin.com/in/dinode/" target="_blank" class="hud-btn small">LINKEDIN_LINK</a>
+                    <a href="https://www.linkedin.com/in/dinode/" target="_blank"
+                        class="hud-btn small">LINKEDIN_LINK</a>
                     <a href="https://github.com/Dean988" target="_blank" class="hud-btn small">GITHUB_REPO</a>
                 </div>
             </section>
@@ -79,27 +88,44 @@
                 </div>
             </section>
 
-             <!-- Tech Loadout -->
-             <section class="hud-panel skills-panel fade-in delay-2">
+            <!-- Visual Break: Robot -->
+            <div class="visual-break small-break fade-in delay-2">
+                <div class="holo-container">
+                    <img src="images/robot.gif" alt="AI Logic Core" class="holo-img">
+                    <div class="scan-overlay"></div>
+                    <div class="holo-border"></div>
+                </div>
+                <div class="caption">> LOGIC_CORE_ONLINE</div>
+            </div>
+
+
+            <!-- Tech Loadout -->
+            <section class="hud-panel skills-panel fade-in delay-2">
                 <div class="panel-header">
                     <h3>// TECH_LOADOUT</h3>
                     <div class="panel-decor"></div>
                 </div>
-                
+
                 <div class="skill-category">
                     <h4>PRIMARY_WEAPON [LANGUAGES]</h4>
                     <ul class="skill-list">
                         <li>
                             <span class="skill-name">PYTHON</span>
-                            <div class="skill-bar"><div class="fill" style="width: 95%"></div></div>
+                            <div class="skill-bar">
+                                <div class="fill" style="width: 95%"></div>
+                            </div>
                         </li>
                         <li>
                             <span class="skill-name">SQL</span>
-                            <div class="skill-bar"><div class="fill" style="width: 85%"></div></div>
+                            <div class="skill-bar">
+                                <div class="fill" style="width: 85%"></div>
+                            </div>
                         </li>
                         <li>
                             <span class="skill-name">R</span>
-                            <div class="skill-bar"><div class="fill" style="width: 70%"></div></div>
+                            <div class="skill-bar">
+                                <div class="fill" style="width: 70%"></div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -113,19 +139,37 @@
                         <div class="inv-item" data-tooltip="PowerBI, Tableau">VISUAL</div>
                     </div>
                 </div>
+
+                <!-- Scientist Visual -->
+                <div class="holo-container small mt-20">
+                    <strong class="label-tiny">> R&D_DEPARTMENT</strong>
+                    <img src="images/scientist.gif" alt="Research" class="holo-img">
+                    <div class="holo-border"></div>
+                </div>
             </section>
         </aside>
 
         <!-- Main Content Area -->
         <div class="main-content">
-            
+
+            <!-- Hero / Banner Background -->
+            <div class="hero-banner-container fade-in">
+                <div class="holo-container wide">
+                    <img src="images/sci fi city.gif" alt="Future City" class="holo-img">
+                    <div class="scan-overlay"></div>
+                    <div class="holo-border"></div>
+                    <div class="caption large">> FUTURE_CITY_SIMULATION_ACTIVE</div>
+                </div>
+            </div>
+
+
             <!-- Quest Log -->
             <section class="hud-panel quest-log fade-in delay-3">
                 <div class="panel-header">
                     <h3>// QUEST_LOG [EXPERIENCE]</h3>
                     <div class="panel-decor"></div>
                 </div>
-                
+
                 <div class="quest-item active">
                     <div class="quest-status">CURRENT_QUEST</div>
                     <div class="quest-details">
@@ -150,7 +194,7 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="quest-item side-quest">
                     <div class="quest-status">SIDE_QUEST</div>
                     <div class="quest-details">
@@ -162,7 +206,7 @@
                     </div>
                 </div>
 
-                 <div class="quest-item prev-mission">
+                <div class="quest-item prev-mission">
                     <div class="quest-status">PREV_MISSION</div>
                     <div class="quest-details">
                         <h4 class="quest-title">MMORPG Analytics</h4>
@@ -176,11 +220,11 @@
 
             <!-- Achievements -->
             <section class="hud-panel achievements fade-in delay-4">
-                 <div class="panel-header">
+                <div class="panel-header">
                     <h3>// ACHIEVEMENTS_UNLOCKED [EDUCATION]</h3>
                     <div class="panel-decor"></div>
                 </div>
-                
+
                 <div class="achievement-grid">
                     <div class="achievement-card gold">
                         <div class="trophy-icon">🏆</div>
@@ -199,7 +243,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="badges-row">
                     <div class="badge" title="Harvard DS">HARVARD_DS</div>
                     <div class="badge" title="Hugging Face">HF_AGENTS</div>
@@ -208,8 +252,8 @@
                 </div>
             </section>
 
-             <!-- Contact / Comms -->
-             <section class="hud-panel comms-panel fade-in delay-5">
+            <!-- Contact / Comms -->
+            <section class="hud-panel comms-panel fade-in delay-5">
                 <div class="panel-header">
                     <h3>// COMMS_LINK</h3>
                     <div class="panel-decor"></div>
@@ -219,14 +263,15 @@
                     <a href="mailto:diemidiodino@gmail.com" class="hud-btn primary">:: SEND_EMAIL ::</a>
                     <a href="images/cv.png" target="_blank" class="hud-btn secondary">:: DOWNLOAD_DATA_SHEET ::</a>
                 </div>
-             </section>
+            </section>
 
         </div>
     </main>
-    
+
     <footer class="hud-footer">
         <p>SYSTEM_STATUS: ONLINE | &copy; <span id="year"></span> DINO_DI_EMIDIO</p>
     </footer>
 
 </body>
+
 </html>
