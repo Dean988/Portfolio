@@ -825,3 +825,74 @@ a {
         padding: 15px;
     }
 }
+
+/* --- Education Header Styles --- */
+.education-display {
+    margin-top: 15px; /* Reduced margin */
+    width: 100%;
+    /* No border-top for cleaner look in header */
+    padding-top: 5px;
+}
+
+.education-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-data);
+    font-size: 0.8rem; /* Slightly smaller to fit */
+    color: var(--text-dim);
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 15px;
+}
+
+.education-list li {
+    margin-bottom: 0;
+    padding-left: 8px;
+    border-left: 2px solid var(--accent-secondary);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.education-list li:hover {
+    color: var(--text-primary);
+    border-left-color: var(--accent-primary);
+    text-shadow: 0 0 8px var(--accent-primary);
+}
+
+/* --- Easter Egg Animations --- */
+
+/* Explosion Particle Animation */
+@keyframes explosionParticle {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(0);
+        opacity: 0;
+    }
+}
+
+/* God Mode Styles */
+body.god-mode {
+    animation: rainbowPulse 2s infinite; /* Faster pulse */
+}
+
+body.god-mode .scan-line {
+    background: linear-gradient(to bottom, transparent 50%, rgba(255, 0, 255, 0.5) 51%);
+}
+
+@keyframes rainbowPulse {
+    0% { filter: hue-rotate(0deg) contrast(1.2); }
+    50% { filter: hue-rotate(180deg) contrast(1.5); }
+    100% { filter: hue-rotate(360deg) contrast(1.2); }
+}
+
+/* Mobile check for education display */
+@media (max-width: 900px) {
+    .education-list {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

@@ -66,5 +66,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- EASTER EGGS ---
+
+  // 1. Click Explosion
+  document.addEventListener('click', (e) => {
+    createExplosion(e.clientX, e.clientY);
+  });
+
+  function createExplosion(x, y) {
+    const particleCount = 20;
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.left = `${x}px`;
+        particle.style.top = `${y}px`;
+        
+        // Random velocity
+        const velocityX = (Math.random() - 0.5) * 10;
+        const velocityY = (Math.random() - 0.5) * 10;
+        
+        particle.style.setProperty('--tx', `${velocityX * 20}px`);
+        particle.style.setProperty('--ty', `${velocityY * 20}px`);
+        particle.style.animation = `explosionParticle 0.8s forwards ease-out`; // Custom animation for click
+        
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 800);
+    }
+  }
+
+  // 2. Konami Code (God Mode)
+  const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+  let konamiIndex = 0;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+            activateGodMode();
+            konamiIndex = 0;
+        }
+    } else {
+        konamiIndex = 0;
+    }
+  });
+
+  function activateGodMode() {
+    document.body.classList.toggle('god-mode');
+    if (document.body.classList.contains('god-mode')) {
+        console.log("GOD MODE ACTIVATED: UNLIMITED POWER!");
+        alert("GOD MODE ACTIVATED: UNLIMITED POWER!"); // Direct feedback
+        // Change colors
+        document.documentElement.style.setProperty('--accent-primary', '#ff00ff');
+        document.documentElement.style.setProperty('--accent-secondary', '#ffe600');
+    } else {
+        console.log("GOD MODE DEACTIVATED");
+        // Reset colors (approximate originals)
+        document.documentElement.style.setProperty('--accent-primary', '#00f2ff');
+        document.documentElement.style.setProperty('--accent-secondary', '#bd00ff');
+    }
+  }
+
   console.log("System Online. Welcome, Player.");
 });
