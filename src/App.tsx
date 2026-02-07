@@ -44,8 +44,8 @@ function App() {
                                     <span className="text-neon-gold text-xs font-bold tracking-widest uppercase">System: Enlightened</span>
                                 </div>
 
-                                <h1 className="text-4xl md:text-6xl font-black font-rajdhani text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-gold mb-4 drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]">
-                                    FUTURE_CITY_SIMULATION
+                                <h1 className="text-3xl md:text-6xl font-black font-rajdhani text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-gold mb-4 drop-shadow-[0_0_10px_rgba(245,158,11,0.5)] break-words">
+                                    CYBER_SOCIOLOGIST
                                 </h1>
 
                                 <p className="text-gray-200 font-serif italic text-lg md:text-xl border-l-4 border-neon-gold pl-6 py-2 bg-black/30 backdrop-blur-sm max-w-2xl">
