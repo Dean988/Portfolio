@@ -1,0 +1,175 @@
+{
+  "player": {
+    "name": "DINO DI EMIDIO",
+    "class": "ARCHITECT OF INTELLIGENCE",
+    "level": 27,
+    "stats": {
+      "hp": 100,
+      "mp": 100,
+      "xp": 95
+    },
+    "avatar": "/images/pic.jpg",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/dinode/",
+      "github": "https://github.com/Dean988",
+      "email": "diemidiodino@gmail.com"
+    }
+  },
+  "lore": {
+    "title": "The Humanist Technologist",
+    "objective": "Forging the Alliance between Mind and Machine.",
+    "bio": [
+      "In an era defined by algorithms, I stand at the intersection of Human Sociology and Artificial Intelligence.",
+      "My mission is not merely to code, but to architect systems that understand the human condition.",
+      "I bridge the gap between the organic nuance of social sciences and the deterministic power of machine learning.",
+      "I am the translator between human intent and digital execution."
+    ],
+    "philosophy": {
+      "title": "THE PHILOSOPHY OF CODE",
+      "content": [
+        "True innovation lies found in the synthesis of opposites. The rigor of data science provides the 'How', but sociology provides the 'Why'.",
+        "I believe that the most powerful AI systems are those built with a deep understanding of the societies they serve.",
+        "My work is a testament to this duality: leveraging the precision of Neural Networks to solve the ambiguous, complex problems of the human world."
+      ]
+    }
+  },
+  "skills": {
+    "primary": [
+      {
+        "name": "PYTHON ARCHITECTURE",
+        "level": 98
+      },
+      {
+        "name": "ADVANCED SQL",
+        "level": 90
+      },
+      {
+        "name": "STATISTICAL R",
+        "level": 85
+      }
+    ],
+    "inventory": [
+      {
+        "name": "DATA ORCHESTRATION",
+        "desc": "Pandas, NumPy, Airflow"
+      },
+      {
+        "name": "NEURAL NETWORKS",
+        "desc": "TensorFlow, PyTorch, Transformers"
+      },
+      {
+        "name": "CLOUD INFRASTRUCTURE",
+        "desc": "Azure Enterprise, AWS Solutions"
+      },
+      {
+        "name": "STRATEGIC VISUALIZATION",
+        "desc": "PowerBI, Tableau, D3.js"
+      }
+    ],
+    "badges": [
+      {
+        "id": "HARVARD_DS",
+        "title": "Harvard Data Science"
+      },
+      {
+        "id": "HF_AGENTS",
+        "title": "Hugging Face Architect"
+      },
+      {
+        "id": "MS_AZURE",
+        "title": "Azure Certified Associate"
+      },
+      {
+        "id": "CLAUDE_EXT",
+        "title": "Anthropic Model Engineering"
+      }
+    ]
+  },
+  "services": [
+    {
+      "icon": "🧠",
+      "title": "AGENTIC COGNITION",
+      "desc": "Designing autonomous multi-agent systems that reason, plan, and execute complex workflows with human-like adaptability."
+    },
+    {
+      "icon": "📚",
+      "title": "KNOWLEDGE SYNTHESIS (RAG)",
+      "desc": "Architecting retrieval systems that ground Large Language Models in your proprietary truth, eliminating hallucinations."
+    },
+    {
+      "icon": "⚙️",
+      "title": "MODEL FINE-TUNING",
+      "desc": "Sculpting foundational models to speak the specific dialect of your industry and solve your unique domain challenges."
+    },
+    {
+      "icon": "🏗️",
+      "title": "FULL-STACK AI INFRA",
+      "desc": "Building the complete pipeline: from vector database internals to elegant, user-centric frontend interfaces."
+    },
+    {
+      "icon": "☁️",
+      "title": "ENTERPRISE CLOUD SCALING",
+      "desc": "Deploying resilient, scalable AI solutions on Azure & AWS that grow with your business needs."
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "status": "CURRENT_MISSION",
+      "title": "Automotive AI Innovation",
+      "company": "Ital Design",
+      "period": "2025 - Present",
+      "objectives": [
+        "Spearheading the design of Generative & Predictive AI architectures for next-gen automotive design.",
+        "Orchestrating Multi-Agent Systems and Explainable AI (XAI) to transparently automate complex design decisions.",
+        "Delivering resilient AI ecosystems that seamlessly link predictive models with business intelligence dashboards."
+      ]
+    },
+    {
+      "id": 2,
+      "status": "MISSION_COMPLETE",
+      "title": "Tech & Digital Integration",
+      "company": "Iveco Group",
+      "period": "2025",
+      "objectives": [
+        "Architecting Azure infrastructure to support enterprise-scale AI integration.",
+        "Developing advanced RAG chatbots and vector search solutions to unlock corporate knowledge bases."
+      ]
+    },
+    {
+      "id": 3,
+      "status": "SIDE_OPERATION",
+      "title": "LLM Alignment & Training",
+      "company": "Outlier",
+      "period": "2024",
+      "objectives": [
+        "Applying sociological frameworks to Reinforcement Learning from Human Feedback (RLHF) to align LLMs with human values."
+      ]
+    },
+    {
+      "id": 4,
+      "status": "PREVIOUS_MISSION",
+      "title": "MMORPG Behavioral Analytics",
+      "company": "Gameforge",
+      "period": "2023 - 2024",
+      "objectives": [
+        "Analyzing massive player behavior datasets to predict churn and optimize economy variables.",
+        "Building intelligent chatbots to enhance player support services."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "MASTER ACHIEVEMENT",
+      "degree": "2nd Level Master in AI & Management",
+      "school": "Politecnico di Torino | 110L (Summa Cum Laude)",
+      "type": "gold"
+    },
+    {
+      "title": "ORIGIN STORY",
+      "degree": "BA & MA in Social Sciences",
+      "school": "Univ. G. D'Annunzio | 110L (Summa Cum Laude)",
+      "type": "silver"
+    }
+  ]
+}
