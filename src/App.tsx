@@ -288,28 +288,6 @@ function App() {
                 </section>
 
                 <section className="grid gap-5 xl:grid-cols-[1.1fr_0.9fr] xl:gap-6">
-                    <motion.article {...fadeInUp} className="panel-shell relative overflow-hidden rounded-[2rem] p-6 md:p-8">
-                        <img
-                            src={profile.heroVisual}
-                            alt="Cyber renaissance visual"
-                            className="absolute inset-0 h-full w-full object-cover opacity-15"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-br from-surface-900/80 via-surface-900/62 to-surface-950/92" />
-                        <div className="relative z-10">
-                            <SectionHeading
-                                eyebrow="Worldview"
-                                title="A different profile, built with a nerd-coded interface language and grounded in real work."
-                                copy="The visual system borrows from control panels, HUDs, dashboards, and gaming culture, but the message remains simple: clarity, craft, and useful outcomes."
-                            />
-
-                            <div className="mt-8 space-y-5 text-[15px] leading-8 text-slate-300">
-                                {manifesto.map((paragraph) => (
-                                    <p key={paragraph}>{paragraph}</p>
-                                ))}
-                            </div>
-                        </div>
-                    </motion.article>
-
                     <motion.section {...fadeInUp} transition={{ duration: 0.72, delay: 0.1, ease: 'easeOut' }} className="panel-shell relative rounded-[2rem] p-6 md:p-8">
                         <SectionHeading
                             eyebrow="Loadout"
@@ -341,6 +319,38 @@ function App() {
                                         </motion.div>
                                     );
                                 })}
+                        </div>
+                    </motion.section>
+
+                    <motion.section {...fadeInUp} className="panel-shell relative overflow-hidden rounded-[2rem] p-6 md:p-8">
+                        <img
+                            src={profile.heroVisual}
+                            alt="Retro interface visual"
+                            className="absolute inset-0 h-full w-full object-cover opacity-10"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-surface-900/80 via-surface-900/65 to-surface-950/92" />
+                        <div className="relative z-10">
+                            <SectionHeading
+                                eyebrow="System Notes"
+                                title="Short notes about how I approach the work."
+                                copy="Same content, but presented as useful context instead of a separate manifesto section."
+                            />
+
+                            <div className="mt-8 grid gap-3">
+                                {manifesto.map((paragraph, index) => (
+                                    <motion.div
+                                        key={paragraph}
+                                        initial={{ opacity: 0, y: 16 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.08, duration: 0.45 }}
+                                        className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4"
+                                    >
+                                        <div className="section-kicker">Note {index + 1}</div>
+                                        <p className="mt-3 text-sm leading-7 text-slate-300">{paragraph}</p>
+                                    </motion.div>
+                                ))}
+                            </div>
                         </div>
                     </motion.section>
                 </section>
