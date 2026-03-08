@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+﻿/** @type {import('tailwindcss').Config} */
 export default {
     content: [
         "./index.html",
@@ -7,35 +7,44 @@ export default {
     theme: {
         extend: {
             colors: {
-                neon: {
-                    blue: '#1a56db', // Professional Royal Blue
-                    cyan: '#06b6d4', // Cyan for accents
-                    gold: '#f59e0b', // Renaissance Gold
-                    green: '#10b981', // Subtle Emerald
+                surface: {
+                    950: '#050816',
+                    900: '#0a1024',
+                    850: '#121933',
+                    800: '#17213f'
                 },
-                dark: {
-                    bg: '#020617', // Slate 950
-                    panel: 'rgba(15, 23, 42, 0.8)', // Slate 900 transparent
+                accent: {
+                    cyan: '#7dd3fc',
+                    blue: '#4f8cff',
+                    gold: '#f6c453',
+                    rose: '#ff7a90',
+                    mint: '#85f0cf'
                 }
             },
             fontFamily: {
-                rajdhani: ['Rajdhani', 'sans-serif'],
-                mono: ['Roboto Mono', 'monospace'],
+                sans: ['"Space Grotesk"', 'sans-serif'],
+                display: ['"Cormorant Garamond"', 'serif'],
+                mono: ['"IBM Plex Mono"', 'monospace'],
             },
             animation: {
-                'glitch': 'glitch 1s linear infinite',
-                'scanline': 'scanline 8s linear infinite',
+                'float': 'float 7s ease-in-out infinite',
+                'drift': 'drift 18s linear infinite',
+                'pulse-soft': 'pulseSoft 6s ease-in-out infinite',
             },
             keyframes: {
-                glitch: {
-                    '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
-                    '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
-                    '62%': { transform: 'translate(0,0) skew(5deg)' },
+                float: {
+                    '0%, 100%': { transform: 'translateY(0px)' },
+                    '50%': { transform: 'translateY(-10px)' },
                 },
-                scanline: {
-                    '0%': { transform: 'translateY(-100%)' },
-                    '100%': { transform: 'translateY(100%)' },
-                }
+                drift: {
+                    '0%': { transform: 'translate3d(-4%, -2%, 0) scale(1)' },
+                    '50%': { transform: 'translate3d(4%, 3%, 0) scale(1.05)' },
+                    '100%': { transform: 'translate3d(-4%, -2%, 0) scale(1)' },
+                },
+                pulseSoft: {
+                    '0%, 100%': { opacity: '0.35' },
+                    '50%': { opacity: '0.75' },
+                },
             }
         },
     },

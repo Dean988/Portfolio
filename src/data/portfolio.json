@@ -1,175 +1,188 @@
-{
-  "player": {
-    "name": "DINO DI EMIDIO",
-    "class": "ARCHITECT OF INTELLIGENCE",
-    "level": 27,
-    "stats": {
-      "hp": 100,
-      "mp": 100,
-      "xp": 95
-    },
-    "avatar": "/images/pic.jpg",
+﻿{
+  "profile": {
+    "name": "Dino Di Emidio",
+    "headline": "AI Strategist, Data Scientist, Sociologist",
+    "tagline": "I build AI experiences that feel technically sharp, commercially useful, and deeply aware of human behavior.",
+    "location": "Italy",
+    "availability": "Available for AI strategy, applied machine learning, and premium consulting collaborations.",
+    "portrait": "/images/pic.jpg",
+    "heroVisual": "/cyber_renaissance_hero_1770466605902.png",
+    "cityVisual": "/images/sci fi city.gif",
+    "signalVisual": "/images/Touch_future_banner_Mobile.jpg",
+    "supportingVisual": "/images/scientist.gif",
     "socials": {
       "linkedin": "https://www.linkedin.com/in/dinode/",
       "github": "https://github.com/Dean988",
       "email": "diemidiodino@gmail.com"
     }
   },
-  "lore": {
-    "title": "The Humanist Technologist",
-    "objective": "Forging the Alliance between Mind and Machine.",
-    "bio": [
-      "In an era defined by algorithms, I stand at the intersection of Human Sociology and Artificial Intelligence.",
-      "My mission is not merely to code, but to architect systems that understand the human condition.",
-      "I bridge the gap between the organic nuance of social sciences and the deterministic power of machine learning.",
-      "I am the translator between human intent and digital execution."
-    ],
-    "philosophy": {
-      "title": "THE PHILOSOPHY OF CODE",
-      "content": [
-        "True innovation lies found in the synthesis of opposites. The rigor of data science provides the 'How', but sociology provides the 'Why'.",
-        "I believe that the most powerful AI systems are those built with a deep understanding of the societies they serve.",
-        "My work is a testament to this duality: leveraging the precision of Neural Networks to solve the ambiguous, complex problems of the human world."
-      ]
-    }
-  },
-  "skills": {
-    "primary": [
+  "hero": {
+    "eyebrow": "AI Portfolio / Sociotechnical Design / Personal Brand",
+    "titleFirst": "Human insight.",
+    "titleSecond": "Machine power.",
+    "intro": "From sociology to advanced AI systems, my profile combines academic rigor, strategic vision, and product instinct to design intelligent solutions that people actually trust.",
+    "quote": "The best AI is not only accurate. It is interpretable, elegant, and built with a real understanding of people.",
+    "metrics": [
       {
-        "name": "PYTHON ARCHITECTURE",
-        "level": 98
+        "value": "3x 110L",
+        "label": "Academic path completed with top distinction"
       },
       {
-        "name": "ADVANCED SQL",
-        "level": 90
+        "value": "AI x Human",
+        "label": "Bridge between technical systems and social complexity"
       },
       {
-        "name": "STATISTICAL R",
-        "level": 85
-      }
-    ],
-    "inventory": [
-      {
-        "name": "DATA ORCHESTRATION",
-        "desc": "Pandas, NumPy, Airflow"
-      },
-      {
-        "name": "NEURAL NETWORKS",
-        "desc": "TensorFlow, PyTorch, Transformers"
-      },
-      {
-        "name": "CLOUD INFRASTRUCTURE",
-        "desc": "Azure Enterprise, AWS Solutions"
-      },
-      {
-        "name": "STRATEGIC VISUALIZATION",
-        "desc": "PowerBI, Tableau, D3.js"
-      }
-    ],
-    "badges": [
-      {
-        "id": "HARVARD_DS",
-        "title": "Harvard Data Science"
-      },
-      {
-        "id": "HF_AGENTS",
-        "title": "Hugging Face Architect"
-      },
-      {
-        "id": "MS_AZURE",
-        "title": "Azure Certified Associate"
-      },
-      {
-        "id": "CLAUDE_EXT",
-        "title": "Anthropic Model Engineering"
+        "value": "RAG / Agents",
+        "label": "Modern architectures for real business use cases"
       }
     ]
   },
+  "manifesto": [
+    "I work where intelligence needs both precision and empathy. My background in sociology gives me a strong sensitivity for human systems, while my technical work in AI lets me turn that understanding into operational products.",
+    "I design AI ecosystems, retrieval pipelines, multi-agent workflows, and decision support tools with a clear principle: technology should not only impress, it should create trust, clarity, and measurable value.",
+    "This portfolio is meant to feel like the same thing I build for clients: ambitious, polished, and impossible to confuse with something generic."
+  ],
+  "education": [
+    {
+      "label": "Postgraduate distinction",
+      "degree": "2nd Level Master in AI & Management",
+      "school": "Politecnico di Torino",
+      "grade": "110L",
+      "detail": "Management vision, AI strategy, and applied innovation"
+    },
+    {
+      "label": "Graduate distinction",
+      "degree": "M.A. in Social Data Science",
+      "school": "Universita G. d'Annunzio",
+      "grade": "110L",
+      "detail": "Research depth in social data, analytics, and interpretation"
+    },
+    {
+      "label": "Foundational distinction",
+      "degree": "B.A. in Sociology & Criminology",
+      "school": "Universita G. d'Annunzio",
+      "grade": "110L",
+      "detail": "Human behavior, systems thinking, and critical analysis"
+    }
+  ],
   "services": [
     {
-      "icon": "🧠",
-      "title": "AGENTIC COGNITION",
-      "desc": "Designing autonomous multi-agent systems that reason, plan, and execute complex workflows with human-like adaptability."
+      "slug": "agentic-systems",
+      "title": "Agentic AI Systems",
+      "desc": "Multi-agent workflows, orchestration logic, and task automation built to move from demo to dependable production value."
     },
     {
-      "icon": "📚",
-      "title": "KNOWLEDGE SYNTHESIS (RAG)",
-      "desc": "Architecting retrieval systems that ground Large Language Models in your proprietary truth, eliminating hallucinations."
+      "slug": "rag-architecture",
+      "title": "RAG and Knowledge Design",
+      "desc": "Retrieval systems that connect language models to structured truth, internal knowledge, and business-critical context."
     },
     {
-      "icon": "⚙️",
-      "title": "MODEL FINE-TUNING",
-      "desc": "Sculpting foundational models to speak the specific dialect of your industry and solve your unique domain challenges."
+      "slug": "ai-strategy",
+      "title": "AI Strategy and Innovation",
+      "desc": "Product vision, use-case prioritization, and executive framing for organizations that want to adopt AI with clarity."
     },
     {
-      "icon": "🏗️",
-      "title": "FULL-STACK AI INFRA",
-      "desc": "Building the complete pipeline: from vector database internals to elegant, user-centric frontend interfaces."
-    },
-    {
-      "icon": "☁️",
-      "title": "ENTERPRISE CLOUD SCALING",
-      "desc": "Deploying resilient, scalable AI solutions on Azure & AWS that grow with your business needs."
+      "slug": "modeling",
+      "title": "Predictive and Generative Modeling",
+      "desc": "Advanced analytics, experimentation, fine-tuning direction, and model design with both business and human outcomes in mind."
     }
   ],
   "experience": [
     {
       "id": 1,
-      "status": "CURRENT_MISSION",
-      "title": "Automotive AI Innovation",
-      "company": "Ital Design",
+      "accent": "current",
+      "role": "Automotive AI Innovation",
+      "company": "Italdesign",
       "period": "2025 - Present",
-      "objectives": [
-        "Spearheading the design of Generative & Predictive AI architectures for next-gen automotive design.",
-        "Orchestrating Multi-Agent Systems and Explainable AI (XAI) to transparently automate complex design decisions.",
-        "Delivering resilient AI ecosystems that seamlessly link predictive models with business intelligence dashboards."
+      "impact": [
+        "Designing generative and predictive AI architectures for next-generation automotive workflows.",
+        "Building explainable systems that connect experimentation, business intelligence, and decision support.",
+        "Turning advanced AI concepts into operational frameworks for real industrial use."
       ]
     },
     {
       "id": 2,
-      "status": "MISSION_COMPLETE",
-      "title": "Tech & Digital Integration",
+      "accent": "core",
+      "role": "Tech and Digital Integration",
       "company": "Iveco Group",
       "period": "2025",
-      "objectives": [
-        "Architecting Azure infrastructure to support enterprise-scale AI integration.",
-        "Developing advanced RAG chatbots and vector search solutions to unlock corporate knowledge bases."
+      "impact": [
+        "Architected Azure foundations for enterprise AI adoption.",
+        "Developed RAG assistants and vector-search solutions to unlock internal knowledge at scale."
       ]
     },
     {
       "id": 3,
-      "status": "SIDE_OPERATION",
-      "title": "LLM Alignment & Training",
+      "accent": "research",
+      "role": "LLM Alignment and Training",
       "company": "Outlier",
       "period": "2024",
-      "objectives": [
-        "Applying sociological frameworks to Reinforcement Learning from Human Feedback (RLHF) to align LLMs with human values."
+      "impact": [
+        "Applied sociological frameworks to RLHF and evaluation tasks, improving alignment between model behavior and human expectations."
       ]
     },
     {
       "id": 4,
-      "status": "PREVIOUS_MISSION",
-      "title": "MMORPG Behavioral Analytics",
+      "accent": "core",
+      "role": "Behavioral Analytics",
       "company": "Gameforge",
       "period": "2023 - 2024",
-      "objectives": [
-        "Analyzing massive player behavior datasets to predict churn and optimize economy variables.",
-        "Building intelligent chatbots to enhance player support services."
+      "impact": [
+        "Analyzed player behavior datasets to predict churn and optimize economic balance.",
+        "Supported intelligent assistant and chatbot initiatives for user support scenarios."
       ]
     }
   ],
-  "education": [
-    {
-      "title": "MASTER ACHIEVEMENT",
-      "degree": "2nd Level Master in AI & Management",
-      "school": "Politecnico di Torino | 110L (Summa Cum Laude)",
-      "type": "gold"
-    },
-    {
-      "title": "ORIGIN STORY",
-      "degree": "BA & MA in Social Sciences",
-      "school": "Univ. G. D'Annunzio | 110L (Summa Cum Laude)",
-      "type": "silver"
-    }
-  ]
+  "skills": {
+    "primary": [
+      {
+        "name": "Python and AI Engineering",
+        "level": 98
+      },
+      {
+        "name": "SQL and Data Systems",
+        "level": 93
+      },
+      {
+        "name": "Research and Analytics",
+        "level": 91
+      }
+    ],
+    "inventory": [
+      {
+        "name": "GenAI Stack",
+        "desc": "LLMs, prompting, evaluation, orchestration"
+      },
+      {
+        "name": "ML and Data",
+        "desc": "Pandas, NumPy, predictive modeling, experimentation"
+      },
+      {
+        "name": "Cloud and Delivery",
+        "desc": "Azure, AWS, production thinking, scalability"
+      },
+      {
+        "name": "Visualization",
+        "desc": "Power BI, dashboards, insight storytelling"
+      }
+    ],
+    "badges": [
+      {
+        "id": "academic",
+        "title": "3 Academic Distinctions"
+      },
+      {
+        "id": "rag",
+        "title": "RAG Systems"
+      },
+      {
+        "id": "agents",
+        "title": "Multi-Agent Design"
+      },
+      {
+        "id": "strategy",
+        "title": "AI Product Vision"
+      }
+    ]
+  }
 }
