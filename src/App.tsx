@@ -4,14 +4,12 @@ import {
     Bot,
     BrainCircuit,
     Briefcase,
-    CircleDot,
     ChevronRight,
     Cpu,
     Github,
     Linkedin,
     Mail,
     MapPin,
-    Menu,
     Radar,
     ShieldCheck,
     Sparkles,
@@ -82,7 +80,7 @@ function App() {
     ];
 
     return (
-        <div id="top" className="relative min-h-screen overflow-hidden bg-surface-950 pb-28 text-slate-100 md:pb-0">
+        <div id="top" className="relative min-h-screen overflow-hidden bg-surface-950 pb-24 text-slate-100 md:pb-0">
             <div className="fixed inset-0 pointer-events-none">
                 <div className="grid-overlay absolute inset-0 opacity-[0.16]" />
                 <div className="noise-overlay absolute inset-0" />
@@ -124,8 +122,8 @@ function App() {
                 </div>
             </header>
 
-            <main className="relative z-10 mx-auto flex max-w-7xl flex-col gap-6 px-4 pb-24 pt-6 md:gap-8 md:px-8 md:pt-10">
-                <section className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+            <main className="relative z-10 mx-auto flex max-w-7xl flex-col gap-5 px-4 pb-16 pt-6 md:gap-8 md:px-8 md:pt-10">
+                <section className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr] lg:gap-6">
                     <motion.div {...fadeInUp} className="panel-shell relative overflow-hidden rounded-[2rem] p-6 md:p-10">
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(125,211,252,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(79,140,255,0.14),transparent_34%)]" />
                         <div className="relative z-10">
@@ -216,7 +214,7 @@ function App() {
                             <div className="absolute inset-0 bg-gradient-to-b from-surface-950/10 via-surface-950/45 to-surface-950" />
                         </div>
 
-                        <div className="relative z-10 flex h-full min-h-[34rem] flex-col gap-4 md:min-h-[38rem]">
+                        <div className="relative z-10 flex h-full flex-col gap-4 lg:min-h-[38rem]">
                             <div className="flex items-start justify-between gap-4 rounded-[1.5rem] border border-white/10 bg-black/20 p-4 backdrop-blur-md">
                                 <div>
                                     <div className="section-kicker">Player Profile</div>
@@ -233,7 +231,7 @@ function App() {
                                 <img
                                     src={profile.portrait}
                                     alt={profile.name}
-                                    className="h-[19rem] w-full rounded-[1.45rem] object-cover object-top pt-10 sm:h-[24rem]"
+                                    className="h-[16rem] w-full rounded-[1.45rem] object-cover object-top pt-10 sm:h-[20rem] lg:h-[24rem]"
                                 />
                                 <div className="absolute inset-x-4 bottom-4 rounded-[1.2rem] border border-white/10 bg-surface-950/72 p-4 backdrop-blur-xl">
                                     <div className="text-sm font-medium text-white">{profile.name}</div>
@@ -291,7 +289,7 @@ function App() {
                     </div>
                 </section>
 
-                <section className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
+                <section className="grid gap-5 xl:grid-cols-[1.1fr_0.9fr] xl:gap-6">
                     <motion.article {...fadeInUp} className="panel-shell relative overflow-hidden rounded-[2rem] p-6 md:p-8">
                         <img
                             src={profile.heroVisual}
@@ -351,7 +349,7 @@ function App() {
                     </motion.section>
                 </section>
 
-                <section id="journey" className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
+                <section id="journey" className="grid gap-5 xl:grid-cols-[1.05fr_0.95fr] xl:gap-6">
                     <motion.section {...fadeInUp} className="panel-shell relative rounded-[2rem] p-6 md:p-8">
                         <SectionHeading
                             eyebrow="Campaign Log"
@@ -519,17 +517,6 @@ function App() {
                     </div>
                 </div>
             </motion.nav>
-
-            <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45, duration: 0.5 }} className="fixed bottom-28 right-4 z-40 lg:hidden">
-                <a
-                    href={`mailto:${profile.socials.email}`}
-                    className="panel-shell inline-flex items-center gap-2 rounded-full px-4 py-3 text-sm text-accent-cyan"
-                >
-                    <Menu size={16} />
-                    Quick contact
-                    <CircleDot size={14} className="text-accent-gold" />
-                </a>
-            </motion.div>
         </div>
     );
 }
