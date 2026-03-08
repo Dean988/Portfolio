@@ -1,18 +1,5 @@
 ﻿import { motion } from 'framer-motion';
-import {
-    ArrowRight,
-    Bot,
-    BrainCircuit,
-    Briefcase,
-    ChevronRight,
-    Github,
-    GraduationCap,
-    Linkedin,
-    Mail,
-    MapPin,
-    Radar,
-    Sparkles,
-} from 'lucide-react';
+import { ArrowRight, Bot, BrainCircuit, Briefcase, ChevronRight, Github, GraduationCap, Linkedin, Mail, MapPin, Radar, Sparkles } from 'lucide-react';
 import portfolioData from './data/portfolio.json';
 
 const serviceIcons = {
@@ -56,7 +43,7 @@ function App() {
                         </div>
                         <div className="min-w-0">
                             <div className="truncate text-sm font-medium tracking-wide text-white">{profile.name}</div>
-                            <div className="hidden text-xs uppercase tracking-[0.24em] text-slate-400 sm:block">{profile.headline}</div>
+                            <div className="hidden text-xs text-slate-400 sm:block">{profile.headline}</div>
                         </div>
                     </div>
 
@@ -64,7 +51,7 @@ function App() {
                         {skills.badges.map((badge) => (
                             <div
                                 key={badge.id}
-                                className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-slate-300"
+                                className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] tracking-[0.08em] text-slate-300"
                             >
                                 {badge.title}
                             </div>
@@ -94,10 +81,6 @@ function App() {
                                 <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-slate-300 md:text-xs md:tracking-[0.24em]">
                                     <MapPin size={14} className="text-accent-cyan" />
                                     {profile.location}
-                                </div>
-                                <div className="inline-flex items-center gap-2 rounded-full border border-accent-gold/20 bg-accent-gold/10 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-accent-gold md:text-xs md:tracking-[0.24em]">
-                                    <GraduationCap size={14} />
-                                    All degrees featured with 110L
                                 </div>
                             </div>
 
@@ -136,7 +119,7 @@ function App() {
                                     href={`mailto:${profile.socials.email}`}
                                     className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-surface-950 transition hover:translate-y-[-1px]"
                                 >
-                                    Start a conversation
+                                    Let's talk
                                     <ArrowRight size={16} />
                                 </a>
                                 <a
@@ -178,7 +161,7 @@ function App() {
                         <div className="relative z-10 flex h-full min-h-[32rem] flex-col justify-between md:min-h-[38rem]">
                             <div className="flex items-start justify-between gap-4 rounded-[1.5rem] border border-white/10 bg-black/20 p-4 backdrop-blur-md">
                                 <div>
-                                    <div className="section-kicker">Signature Positioning</div>
+                                    <div className="section-kicker">Approach</div>
                                     <p className="mt-2 text-sm leading-7 text-slate-300">{profile.availability}</p>
                                 </div>
                                 <Sparkles className="mt-1 shrink-0 text-accent-gold" />
@@ -188,9 +171,9 @@ function App() {
                                 <div className="absolute -left-4 top-10 hidden h-28 w-28 rounded-full bg-accent-cyan/20 blur-3xl md:block" />
                                 <div className="absolute -right-6 bottom-12 hidden h-36 w-36 rounded-full bg-accent-gold/20 blur-3xl md:block" />
                                 <div className="sheen panel-shell relative overflow-hidden rounded-[2rem] border border-white/15 bg-[linear-gradient(160deg,rgba(255,255,255,0.16),rgba(255,255,255,0.04))] p-3">
-                                    <div className="absolute inset-x-3 top-3 flex items-center justify-between rounded-full border border-white/10 bg-surface-950/70 px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-slate-300 md:text-[11px] md:tracking-[0.22em]">
-                                        <span>Visual Identity</span>
-                                        <span className="text-accent-cyan">AI x Sociology</span>
+                                    <div className="absolute inset-x-3 top-3 flex items-center justify-between rounded-full border border-white/10 bg-surface-950/70 px-4 py-2 text-[10px] tracking-[0.14em] text-slate-300 md:text-[11px] md:tracking-[0.18em]">
+                                        <span>Profile</span>
+                                        <span className="text-accent-cyan">AI and Sociology</span>
                                     </div>
                                     <img
                                         src={profile.portrait}
@@ -198,17 +181,11 @@ function App() {
                                         className="h-[22rem] w-full rounded-[1.4rem] object-cover object-top pt-10 sm:h-[24rem] md:h-[27rem]"
                                     />
                                 </div>
-
-                                <div className="panel-shell relative mt-4 max-w-[16rem] rounded-[1.4rem] p-4 md:absolute md:-bottom-6 md:-left-3 md:mt-0">
-                                    <div className="section-kicker">Academic Status</div>
-                                    <div className="mt-2 text-3xl font-bold text-white">110L x 3</div>
-                                    <div className="mt-1 text-sm leading-6 text-slate-400">Visible, elegant, and impossible to miss.</div>
-                                </div>
                             </div>
 
                             <div className="mt-4 grid gap-3 md:mt-0">
                                 <div className="panel-shell relative rounded-[1.5rem] p-4">
-                                    <div className="section-kicker">Core Statement</div>
+                                    <div className="section-kicker">Perspective</div>
                                     <p className="mt-3 font-display text-[2rem] italic leading-tight text-slate-100 md:text-3xl">
                                         "{hero.quote}"
                                     </p>
@@ -222,7 +199,7 @@ function App() {
                                         />
                                         <div className="relative z-10">
                                             <div className="section-kicker">Focus</div>
-                                            <div className="mt-3 text-xl font-medium text-white">Strategic AI</div>
+                                            <div className="mt-3 text-xl font-medium text-white">Useful AI</div>
                                         </div>
                                     </div>
                                     <div className="panel-shell relative min-h-28 overflow-hidden rounded-[1.5rem] p-4">
@@ -233,7 +210,7 @@ function App() {
                                         />
                                         <div className="relative z-10">
                                             <div className="section-kicker">Method</div>
-                                            <div className="mt-3 text-xl font-medium text-white">Human-centered systems</div>
+                                            <div className="mt-3 text-xl font-medium text-white">Human-centered thinking</div>
                                         </div>
                                     </div>
                                 </div>
@@ -255,7 +232,7 @@ function App() {
                             <div className="absolute right-4 top-4 rounded-full border border-accent-gold/25 bg-accent-gold/10 px-4 py-1 text-sm font-medium text-accent-gold">
                                 {item.grade}
                             </div>
-                            <div className="pr-20 section-kicker">{item.label}</div>
+                            <div className="section-kicker pr-20">{item.label}</div>
                             <h2 className="mt-5 max-w-[15rem] font-display text-[2.2rem] font-semibold leading-none text-white md:text-4xl">
                                 {item.degree}
                             </h2>
@@ -263,7 +240,7 @@ function App() {
                             <p className="mt-4 max-w-sm text-sm leading-7 text-slate-400">{item.detail}</p>
                             <div className="mt-8 flex items-center gap-2 text-sm text-slate-300">
                                 <GraduationCap size={16} className="text-accent-gold" />
-                                Academic title highlighted with top final mark
+                                Final grade: {item.grade}
                             </div>
                         </motion.article>
                     ))}
@@ -278,9 +255,9 @@ function App() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-br from-surface-900/80 via-surface-900/60 to-surface-950/90" />
                         <div className="relative z-10">
-                            <div className="section-kicker">Manifesto</div>
+                            <div className="section-kicker">A few words about my work</div>
                             <h2 className="mt-4 max-w-md font-display text-4xl font-semibold leading-none text-white md:text-5xl">
-                                A portfolio that feels like a flagship product.
+                                A personal space designed to feel clear, warm, and intentional.
                             </h2>
                             <div className="mt-8 space-y-5 text-[15px] leading-8 text-slate-300">
                                 {manifesto.map((paragraph) => (
@@ -294,8 +271,8 @@ function App() {
                         <motion.section {...fadeInUp} transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }} className="panel-shell relative rounded-[2rem] p-6 md:p-8">
                             <div className="flex items-center justify-between gap-4">
                                 <div>
-                                    <div className="section-kicker">What I design</div>
-                                    <h2 className="mt-3 font-display text-3xl font-semibold text-white md:text-4xl">Modern AI capabilities with a luxury presentation layer.</h2>
+                                    <div className="section-kicker">What I can help with</div>
+                                    <h2 className="mt-3 font-display text-3xl font-semibold text-white md:text-4xl">Applied AI, designed with both rigor and sensitivity.</h2>
                                 </div>
                                 <Briefcase className="hidden shrink-0 text-accent-cyan md:block" size={30} />
                             </div>
@@ -416,12 +393,12 @@ function App() {
                     <div className="absolute inset-0 bg-gradient-to-r from-surface-950 via-surface-900/90 to-surface-950/80" />
                     <div className="relative z-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
                         <div>
-                            <div className="section-kicker">Final impression</div>
+                            <div className="section-kicker">Contact</div>
                             <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-none text-white md:text-6xl">
-                                A striking digital business card for AI, strategy, and academic excellence.
+                                A portfolio that introduces the work with personality, but keeps the tone grounded.
                             </h2>
                             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
-                                This new portfolio is built to make a strong first impression fast: premium visual language, memorable storytelling, visible degrees, and a positioning that feels senior from the first screen.
+                                The goal is simple: present a profile that feels thoughtful, credible, and distinctive without becoming loud. The academic achievements are visible where they matter, and the rest of the site stays focused on who I am and how I work.
                             </p>
                         </div>
 

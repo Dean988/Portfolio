@@ -2,9 +2,9 @@
   "profile": {
     "name": "Dino Di Emidio",
     "headline": "AI Strategist, Data Scientist, Sociologist",
-    "tagline": "I build AI experiences that feel technically sharp, commercially useful, and deeply aware of human behavior.",
+    "tagline": "I work on AI with a strong attention to people, clarity, and real usefulness.",
     "location": "Italy",
-    "availability": "Available for AI strategy, applied machine learning, and premium consulting collaborations.",
+    "availability": "Available for AI strategy, applied machine learning, and thoughtful digital collaborations.",
     "portrait": "/images/pic.jpg",
     "heroVisual": "/cyber_renaissance_hero_1770466605902.png",
     "cityVisual": "/images/sci fi city.gif",
@@ -17,30 +17,30 @@
     }
   },
   "hero": {
-    "eyebrow": "AI Portfolio / Sociotechnical Design / Personal Brand",
-    "titleFirst": "Human insight.",
-    "titleSecond": "Machine power.",
-    "intro": "From sociology to advanced AI systems, my profile combines academic rigor, strategic vision, and product instinct to design intelligent solutions that people actually trust.",
-    "quote": "The best AI is not only accurate. It is interpretable, elegant, and built with a real understanding of people.",
+    "eyebrow": "AI Portfolio / Sociology / Applied Intelligence",
+    "titleFirst": "Human understanding.",
+    "titleSecond": "Thoughtful AI.",
+    "intro": "My path moves from sociology to advanced AI systems, with a focus on building solutions that are rigorous, useful, and genuinely understandable for the people who use them.",
+    "quote": "Good technology should feel intelligent, but also clear, respectful, and human.",
     "metrics": [
       {
-        "value": "3x 110L",
-        "label": "Academic path completed with top distinction"
+        "value": "Sociology + AI",
+        "label": "A profile that connects human insight with technical depth"
       },
       {
-        "value": "AI x Human",
-        "label": "Bridge between technical systems and social complexity"
+        "value": "Research + Delivery",
+        "label": "From academic thinking to practical systems and products"
       },
       {
         "value": "RAG / Agents",
-        "label": "Modern architectures for real business use cases"
+        "label": "Modern architectures designed for real use cases"
       }
     ]
   },
   "manifesto": [
-    "I work where intelligence needs both precision and empathy. My background in sociology gives me a strong sensitivity for human systems, while my technical work in AI lets me turn that understanding into operational products.",
-    "I design AI ecosystems, retrieval pipelines, multi-agent workflows, and decision support tools with a clear principle: technology should not only impress, it should create trust, clarity, and measurable value.",
-    "This portfolio is meant to feel like the same thing I build for clients: ambitious, polished, and impossible to confuse with something generic."
+    "I work where intelligence needs both precision and empathy. Sociology shaped the way I read people and systems, while AI gave me the tools to turn that understanding into practical solutions.",
+    "I build retrieval pipelines, multi-agent workflows, decision-support tools, and AI experiences with one simple principle: technology should create clarity, trust, and real value.",
+    "I wanted this portfolio to feel personal, calm, and intentional. Not loud, but memorable."
   ],
   "education": [
     {
@@ -79,7 +79,7 @@
     {
       "slug": "ai-strategy",
       "title": "AI Strategy and Innovation",
-      "desc": "Product vision, use-case prioritization, and executive framing for organizations that want to adopt AI with clarity."
+      "desc": "Use-case framing, product direction, and practical roadmaps for organizations adopting AI with care and clarity."
     },
     {
       "slug": "modeling",
@@ -169,7 +169,7 @@
     "badges": [
       {
         "id": "academic",
-        "title": "3 Academic Distinctions"
+        "title": "Academic Depth"
       },
       {
         "id": "rag",

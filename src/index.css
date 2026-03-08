@@ -6,9 +6,9 @@
 
 :root {
   color-scheme: dark;
-  --bg: #050816;
-  --panel: rgba(16, 24, 49, 0.72);
-  --border: rgba(148, 196, 255, 0.18);
+  --bg: #08111d;
+  --panel: rgba(18, 28, 46, 0.68);
+  --border: rgba(173, 193, 220, 0.16);
   --text: #eff4ff;
   --muted: #9ca9c7;
   --cyan: #7dd3fc;
@@ -25,9 +25,9 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at top left, rgba(79, 140, 255, 0.22), transparent 30%),
-    radial-gradient(circle at 80% 20%, rgba(246, 196, 83, 0.18), transparent 24%),
-    radial-gradient(circle at 50% 100%, rgba(255, 122, 144, 0.16), transparent 28%),
+    radial-gradient(circle at top left, rgba(133, 165, 214, 0.18), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(246, 196, 83, 0.1), transparent 24%),
+    radial-gradient(circle at 50% 100%, rgba(134, 182, 164, 0.12), transparent 28%),
     var(--bg);
   color: var(--text);
   font-family: "Space Grotesk", sans-serif;
@@ -59,13 +59,13 @@ a {
 
 .panel-shell {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 24%),
     var(--panel);
   border: 1px solid var(--border);
   box-shadow:
-    0 24px 80px rgba(3, 6, 20, 0.55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(22px);
+    0 18px 50px rgba(3, 6, 20, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
 }
 
 .panel-shell::before {
@@ -75,15 +75,15 @@ a {
   border-radius: inherit;
   pointer-events: none;
   background:
-    linear-gradient(120deg, rgba(125, 211, 252, 0.08), transparent 32%, transparent 68%, rgba(246, 196, 83, 0.08));
-  opacity: 0.75;
+    linear-gradient(120deg, rgba(125, 211, 252, 0.05), transparent 32%, transparent 68%, rgba(246, 196, 83, 0.05));
+  opacity: 0.7;
 }
 
 .grid-overlay {
   background-image:
-    linear-gradient(rgba(125, 211, 252, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(125, 211, 252, 0.08) 1px, transparent 1px);
-  background-size: 42px 42px;
+    linear-gradient(rgba(125, 211, 252, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(125, 211, 252, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 .noise-overlay {
@@ -94,12 +94,12 @@ a {
 
 .spotlight {
   background:
-    radial-gradient(circle at center, rgba(125, 211, 252, 0.18), transparent 42%),
-    radial-gradient(circle at center, rgba(246, 196, 83, 0.12), transparent 58%);
+    radial-gradient(circle at center, rgba(125, 211, 252, 0.12), transparent 42%),
+    radial-gradient(circle at center, rgba(246, 196, 83, 0.08), transparent 58%);
 }
 
 .text-shimmer {
-  background: linear-gradient(90deg, #f7fafc 0%, #a5d8ff 30%, #f6c453 70%, #ffffff 100%);
+  background: linear-gradient(90deg, #f8fbff 0%, #d5e7ff 40%, #f3dfaa 75%, #ffffff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -116,13 +116,13 @@ a {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(110deg, transparent 10%, rgba(255, 255, 255, 0.16) 44%, transparent 62%);
+  background: linear-gradient(110deg, transparent 10%, rgba(255, 255, 255, 0.1) 44%, transparent 62%);
   transform: translateX(-140%);
   animation: sheenMove 6s linear infinite;
 }
 
 .timeline-line {
-  background: linear-gradient(180deg, rgba(125, 211, 252, 0.5), rgba(246, 196, 83, 0.15), rgba(255, 122, 144, 0.45));
+  background: linear-gradient(180deg, rgba(125, 211, 252, 0.32), rgba(246, 196, 83, 0.12), rgba(134, 182, 164, 0.3));
 }
 
 @keyframes sheenMove {
