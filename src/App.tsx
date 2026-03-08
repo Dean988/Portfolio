@@ -1,5 +1,19 @@
-﻿import { motion } from 'framer-motion';
-import { ArrowRight, Bot, BrainCircuit, Briefcase, ChevronRight, Github, GraduationCap, Linkedin, Mail, MapPin, Radar, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
+import {
+    ArrowRight,
+    Bot,
+    BrainCircuit,
+    ChevronRight,
+    Cpu,
+    Github,
+    Linkedin,
+    Mail,
+    MapPin,
+    Radar,
+    ShieldCheck,
+    Sparkles,
+    Trophy,
+} from 'lucide-react';
 import portfolioData from './data/portfolio.json';
 
 const serviceIcons = {
@@ -22,23 +36,54 @@ const fadeInUp = {
     transition: { duration: 0.7, ease: 'easeOut' },
 } as const;
 
+function SectionHeading({ eyebrow, title, copy }: { eyebrow: string; title: string; copy?: string }) {
+    return (
+        <div className="max-w-2xl">
+            <div className="section-kicker">{eyebrow}</div>
+            <h2 className="mt-3 font-display text-3xl font-semibold leading-none text-white md:text-5xl">{title}</h2>
+            {copy ? <p className="mt-4 text-sm leading-7 text-slate-400 md:text-base md:leading-8">{copy}</p> : null}
+        </div>
+    );
+}
+
 function App() {
     const { profile, hero, manifesto, education, services, experience, skills } = portfolioData;
+
+    const signalCards = [
+        {
+            title: 'Current Build',
+            value: 'AI systems with human context',
+            detail: 'A profile that mixes sociology, product thinking, and technical delivery.',
+            icon: Cpu,
+        },
+        {
+            title: 'Playstyle',
+            value: 'Professional, curious, practical',
+            detail: 'I like interfaces and systems that feel thoughtful rather than loud.',
+            icon: ShieldCheck,
+        },
+        {
+            title: 'Career Arc',
+            value: 'Research -> delivery -> impact',
+            detail: 'From academic depth to solutions that work in real environments.',
+            icon: Trophy,
+        },
+    ];
 
     return (
         <div className="relative min-h-screen overflow-hidden bg-surface-950 text-slate-100">
             <div className="fixed inset-0 pointer-events-none">
-                <div className="grid-overlay absolute inset-0 opacity-[0.14]" />
+                <div className="grid-overlay absolute inset-0 opacity-[0.16]" />
                 <div className="noise-overlay absolute inset-0" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.08),transparent_35%),radial-gradient(circle_at_bottom,rgba(246,196,83,0.06),transparent_32%)]" />
                 <div className="spotlight absolute left-[-18rem] top-[-12rem] h-[36rem] w-[36rem] rounded-full blur-3xl" />
-                <div className="absolute bottom-[-14rem] right-[-10rem] h-[28rem] w-[28rem] rounded-full bg-accent-rose/15 blur-3xl animate-pulse-soft" />
-                <div className="absolute right-[12%] top-[18%] h-44 w-44 rounded-full bg-accent-gold/10 blur-3xl animate-float" />
+                <div className="absolute bottom-[-14rem] right-[-10rem] h-[28rem] w-[28rem] rounded-full bg-accent-blue/15 blur-3xl animate-pulse-soft" />
             </div>
 
-            <header className="sticky top-0 z-40 border-b border-white/10 bg-surface-950/70 backdrop-blur-2xl">
+            <header className="sticky top-0 z-40 border-b border-white/10 bg-surface-950/75 backdrop-blur-2xl">
                 <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 md:px-8">
                     <div className="flex min-w-0 items-center gap-3">
-                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/5">
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/5 shadow-[0_0_30px_rgba(125,211,252,0.12)]">
                             <span className="font-display text-2xl font-bold text-shimmer">D</span>
                         </div>
                         <div className="min-w-0">
@@ -68,23 +113,31 @@ function App() {
                 </div>
             </header>
 
-            <main className="relative z-10 mx-auto flex max-w-7xl flex-col gap-6 px-4 pb-20 pt-6 md:gap-8 md:px-8 md:pt-10">
-                <section className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_28rem]">
-                    <motion.div
-                        {...fadeInUp}
-                        className="panel-shell relative overflow-hidden rounded-[2rem] p-6 md:p-10"
-                    >
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(125,211,252,0.14),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(246,196,83,0.12),transparent_32%)]" />
+            <main className="relative z-10 mx-auto flex max-w-7xl flex-col gap-6 px-4 pb-24 pt-6 md:gap-8 md:px-8 md:pt-10">
+                <section className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+                    <motion.div {...fadeInUp} className="panel-shell relative overflow-hidden rounded-[2rem] p-6 md:p-10">
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(125,211,252,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(79,140,255,0.14),transparent_34%)]" />
                         <div className="relative z-10">
-                            <div className="section-kicker mb-5">{hero.eyebrow}</div>
-                            <div className="mb-6 flex flex-wrap gap-3">
+                            <div className="flex flex-wrap items-center gap-3">
+                                <div className="section-kicker">{hero.eyebrow}</div>
+                                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] text-slate-300">
+                                    <span className="h-2 w-2 rounded-full bg-accent-cyan" />
+                                    Profile online
+                                </div>
+                            </div>
+
+                            <div className="mt-6 flex flex-wrap gap-3">
                                 <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-slate-300 md:text-xs md:tracking-[0.24em]">
                                     <MapPin size={14} className="text-accent-cyan" />
                                     {profile.location}
                                 </div>
+                                <div className="inline-flex items-center gap-2 rounded-full border border-accent-gold/20 bg-accent-gold/10 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-accent-gold md:text-xs md:tracking-[0.24em]">
+                                    <Sparkles size={14} />
+                                    Gaming-inspired presentation
+                                </div>
                             </div>
 
-                            <h1 className="max-w-4xl text-[2.8rem] font-bold leading-[0.95] text-white sm:text-6xl md:text-7xl xl:text-[5.8rem]">
+                            <h1 className="mt-8 max-w-4xl text-[2.9rem] font-bold leading-[0.93] text-white sm:text-6xl md:text-7xl xl:text-[5.8rem]">
                                 {hero.titleFirst}
                                 <br />
                                 <span className="text-shimmer">{hero.titleSecond}</span>
@@ -98,20 +151,22 @@ function App() {
                                 {hero.intro}
                             </p>
 
-                            <div className="mt-8 grid gap-3 md:grid-cols-3">
-                                {hero.metrics.map((item, index) => (
-                                    <motion.div
-                                        key={item.value}
-                                        initial={{ opacity: 0, y: 18 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.12 * index, duration: 0.55 }}
-                                        className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4"
-                                    >
-                                        <div className="text-2xl font-bold text-white">{item.value}</div>
-                                        <div className="mt-2 text-sm leading-6 text-slate-400">{item.label}</div>
-                                    </motion.div>
-                                ))}
+                            <div className="mt-8 overflow-x-auto pb-2 no-scrollbar">
+                                <div className="flex min-w-max gap-3 md:grid md:min-w-0 md:grid-cols-3">
+                                    {hero.metrics.map((item, index) => (
+                                        <motion.div
+                                            key={item.value}
+                                            initial={{ opacity: 0, y: 18 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: 0.1 * index, duration: 0.55 }}
+                                            className="min-w-[15rem] rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4 md:min-w-0"
+                                        >
+                                            <div className="text-xl font-semibold text-white">{item.value}</div>
+                                            <div className="mt-2 text-sm leading-6 text-slate-400">{item.label}</div>
+                                        </motion.div>
+                                    ))}
+                                </div>
                             </div>
 
                             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
@@ -158,107 +213,96 @@ function App() {
                             <div className="absolute inset-0 bg-gradient-to-b from-surface-950/10 via-surface-950/45 to-surface-950" />
                         </div>
 
-                        <div className="relative z-10 flex h-full min-h-[32rem] flex-col justify-between md:min-h-[38rem]">
+                        <div className="relative z-10 flex h-full min-h-[34rem] flex-col gap-4 md:min-h-[38rem]">
                             <div className="flex items-start justify-between gap-4 rounded-[1.5rem] border border-white/10 bg-black/20 p-4 backdrop-blur-md">
                                 <div>
-                                    <div className="section-kicker">Approach</div>
+                                    <div className="section-kicker">Player Profile</div>
                                     <p className="mt-2 text-sm leading-7 text-slate-300">{profile.availability}</p>
                                 </div>
-                                <Sparkles className="mt-1 shrink-0 text-accent-gold" />
+                                <ShieldCheck className="mt-1 shrink-0 text-accent-gold" />
                             </div>
 
-                            <div className="relative mx-auto mt-6 w-full max-w-sm">
-                                <div className="absolute -left-4 top-10 hidden h-28 w-28 rounded-full bg-accent-cyan/20 blur-3xl md:block" />
-                                <div className="absolute -right-6 bottom-12 hidden h-36 w-36 rounded-full bg-accent-gold/20 blur-3xl md:block" />
-                                <div className="sheen panel-shell relative overflow-hidden rounded-[2rem] border border-white/15 bg-[linear-gradient(160deg,rgba(255,255,255,0.16),rgba(255,255,255,0.04))] p-3">
-                                    <div className="absolute inset-x-3 top-3 flex items-center justify-between rounded-full border border-white/10 bg-surface-950/70 px-4 py-2 text-[10px] tracking-[0.14em] text-slate-300 md:text-[11px] md:tracking-[0.18em]">
-                                        <span>Profile</span>
-                                        <span className="text-accent-cyan">AI and Sociology</span>
-                                    </div>
-                                    <img
-                                        src={profile.portrait}
-                                        alt={profile.name}
-                                        className="h-[22rem] w-full rounded-[1.4rem] object-cover object-top pt-10 sm:h-[24rem] md:h-[27rem]"
-                                    />
+                            <div className="panel-shell relative overflow-hidden rounded-[1.8rem] p-3">
+                                <div className="absolute inset-x-3 top-3 flex items-center justify-between rounded-full border border-white/10 bg-surface-950/70 px-4 py-2 text-[10px] tracking-[0.14em] text-slate-300 md:text-[11px] md:tracking-[0.18em]">
+                                    <span>Current Build</span>
+                                    <span className="text-accent-cyan">AI and Sociology</span>
+                                </div>
+                                <img
+                                    src={profile.portrait}
+                                    alt={profile.name}
+                                    className="h-[19rem] w-full rounded-[1.45rem] object-cover object-top pt-10 sm:h-[24rem]"
+                                />
+                                <div className="absolute inset-x-4 bottom-4 rounded-[1.2rem] border border-white/10 bg-surface-950/72 p-4 backdrop-blur-xl">
+                                    <div className="text-sm font-medium text-white">{profile.name}</div>
+                                    <div className="mt-1 text-sm text-slate-400">{profile.headline}</div>
                                 </div>
                             </div>
 
-                            <div className="mt-4 grid gap-3 md:mt-0">
-                                <div className="panel-shell relative rounded-[1.5rem] p-4">
-                                    <div className="section-kicker">Perspective</div>
-                                    <p className="mt-3 font-display text-[2rem] italic leading-tight text-slate-100 md:text-3xl">
-                                        "{hero.quote}"
-                                    </p>
-                                </div>
-                                <div className="grid gap-3 sm:grid-cols-2">
-                                    <div className="panel-shell relative min-h-28 overflow-hidden rounded-[1.5rem] p-4">
-                                        <img
-                                            src={profile.signalVisual}
-                                            alt="Interface signal visual"
-                                            className="absolute inset-0 h-full w-full object-cover opacity-35"
-                                        />
-                                        <div className="relative z-10">
-                                            <div className="section-kicker">Focus</div>
-                                            <div className="mt-3 text-xl font-medium text-white">Useful AI</div>
+                            <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+                                {signalCards.map((card) => {
+                                    const Icon = card.icon;
+                                    return (
+                                        <div key={card.title} className="panel-shell relative rounded-[1.45rem] p-4">
+                                            <div className="flex items-center justify-between gap-3">
+                                                <div className="section-kicker">{card.title}</div>
+                                                <Icon size={18} className="text-accent-cyan" />
+                                            </div>
+                                            <div className="mt-3 text-lg font-medium text-white">{card.value}</div>
+                                            <p className="mt-2 text-sm leading-6 text-slate-400">{card.detail}</p>
                                         </div>
-                                    </div>
-                                    <div className="panel-shell relative min-h-28 overflow-hidden rounded-[1.5rem] p-4">
-                                        <img
-                                            src={profile.supportingVisual}
-                                            alt="Scientific visual"
-                                            className="absolute inset-0 h-full w-full object-cover opacity-25"
-                                        />
-                                        <div className="relative z-10">
-                                            <div className="section-kicker">Method</div>
-                                            <div className="mt-3 text-xl font-medium text-white">Human-centered thinking</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    );
+                                })}
                             </div>
                         </div>
                     </motion.aside>
                 </section>
 
-                <section id="education" className="grid gap-4 md:grid-cols-3">
-                    {education.map((item, index) => (
-                        <motion.article
-                            key={item.degree}
-                            initial={{ opacity: 0, y: 24 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.3 }}
-                            transition={{ delay: index * 0.12, duration: 0.65 }}
-                            className="panel-shell relative overflow-hidden rounded-[2rem] p-6"
-                        >
-                            <div className="absolute right-4 top-4 rounded-full border border-accent-gold/25 bg-accent-gold/10 px-4 py-1 text-sm font-medium text-accent-gold">
-                                {item.grade}
-                            </div>
-                            <div className="section-kicker pr-20">{item.label}</div>
-                            <h2 className="mt-5 max-w-[15rem] font-display text-[2.2rem] font-semibold leading-none text-white md:text-4xl">
-                                {item.degree}
-                            </h2>
-                            <div className="mt-5 text-sm uppercase tracking-[0.22em] text-accent-cyan md:tracking-[0.24em]">{item.school}</div>
-                            <p className="mt-4 max-w-sm text-sm leading-7 text-slate-400">{item.detail}</p>
-                            <div className="mt-8 flex items-center gap-2 text-sm text-slate-300">
-                                <GraduationCap size={16} className="text-accent-gold" />
-                                Final grade: {item.grade}
-                            </div>
-                        </motion.article>
-                    ))}
+                <section>
+                    <SectionHeading
+                        eyebrow="Achievements"
+                        title="Education presented like milestones, with the tone kept clean."
+                        copy="The academic path stays visible and easy to read, without letting the rest of the profile revolve around it."
+                    />
+
+                    <div className="mt-6 grid gap-4 md:grid-cols-3">
+                        {education.map((item, index) => (
+                            <motion.article
+                                key={item.degree}
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{ delay: index * 0.12, duration: 0.65 }}
+                                className="panel-shell relative overflow-hidden rounded-[2rem] p-6"
+                            >
+                                <div className="absolute right-4 top-4 rounded-full border border-accent-gold/25 bg-accent-gold/10 px-4 py-1 text-sm font-medium text-accent-gold">
+                                    {item.grade}
+                                </div>
+                                <div className="section-kicker pr-20">{item.label}</div>
+                                <h3 className="mt-5 max-w-[15rem] font-display text-[2.15rem] font-semibold leading-none text-white md:text-4xl">
+                                    {item.degree}
+                                </h3>
+                                <div className="mt-5 text-sm uppercase tracking-[0.22em] text-accent-cyan md:tracking-[0.24em]">{item.school}</div>
+                                <p className="mt-4 max-w-sm text-sm leading-7 text-slate-400">{item.detail}</p>
+                            </motion.article>
+                        ))}
+                    </div>
                 </section>
 
-                <section className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr]">
+                <section className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
                     <motion.article {...fadeInUp} className="panel-shell relative overflow-hidden rounded-[2rem] p-6 md:p-8">
                         <img
                             src={profile.heroVisual}
                             alt="Cyber renaissance visual"
-                            className="absolute inset-0 h-full w-full object-cover opacity-20"
+                            className="absolute inset-0 h-full w-full object-cover opacity-15"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-br from-surface-900/80 via-surface-900/60 to-surface-950/90" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-surface-900/80 via-surface-900/62 to-surface-950/92" />
                         <div className="relative z-10">
-                            <div className="section-kicker">A few words about my work</div>
-                            <h2 className="mt-4 max-w-md font-display text-4xl font-semibold leading-none text-white md:text-5xl">
-                                A personal space designed to feel clear, warm, and intentional.
-                            </h2>
+                            <SectionHeading
+                                eyebrow="Worldview"
+                                title="A different profile, built with a gaming language but grounded in real work."
+                                copy="The visual system borrows from interfaces, dashboards, and player cards, but the message remains simple: clarity, craft, and useful outcomes."
+                            />
+
                             <div className="mt-8 space-y-5 text-[15px] leading-8 text-slate-300">
                                 {manifesto.map((paragraph) => (
                                     <p key={paragraph}>{paragraph}</p>
@@ -267,17 +311,15 @@ function App() {
                         </div>
                     </motion.article>
 
-                    <div className="grid gap-6">
-                        <motion.section {...fadeInUp} transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }} className="panel-shell relative rounded-[2rem] p-6 md:p-8">
-                            <div className="flex items-center justify-between gap-4">
-                                <div>
-                                    <div className="section-kicker">What I can help with</div>
-                                    <h2 className="mt-3 font-display text-3xl font-semibold text-white md:text-4xl">Applied AI, designed with both rigor and sensitivity.</h2>
-                                </div>
-                                <Briefcase className="hidden shrink-0 text-accent-cyan md:block" size={30} />
-                            </div>
+                    <motion.section {...fadeInUp} transition={{ duration: 0.72, delay: 0.1, ease: 'easeOut' }} className="panel-shell relative rounded-[2rem] p-6 md:p-8">
+                        <SectionHeading
+                            eyebrow="Loadout"
+                            title="Professional capabilities, framed like a clean game interface."
+                            copy="The goal is to feel distinctive on mobile and desktop without losing seriousness."
+                        />
 
-                            <div className="mt-8 grid gap-4 md:grid-cols-2">
+                        <div className="mt-8 overflow-x-auto pb-2 no-scrollbar">
+                            <div className="flex min-w-max gap-4 md:grid md:min-w-0 md:grid-cols-2">
                                 {services.map((service, index) => {
                                     const Icon = serviceIcons[service.slug as keyof typeof serviceIcons] ?? Sparkles;
 
@@ -287,8 +329,8 @@ function App() {
                                             initial={{ opacity: 0, y: 18 }}
                                             whileInView={{ opacity: 1, y: 0 }}
                                             viewport={{ once: true }}
-                                            transition={{ delay: index * 0.12, duration: 0.55 }}
-                                            className="group rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-5 transition hover:border-accent-cyan/30 hover:bg-white/[0.06]"
+                                            transition={{ delay: index * 0.1, duration: 0.55 }}
+                                            className="group min-w-[17rem] rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-5 transition hover:border-accent-cyan/30 hover:bg-white/[0.06] md:min-w-0"
                                         >
                                             <div className="flex items-center justify-between gap-4">
                                                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-surface-900/80 text-accent-cyan">
@@ -302,79 +344,84 @@ function App() {
                                     );
                                 })}
                             </div>
-                        </motion.section>
+                        </div>
+                    </motion.section>
+                </section>
 
-                        <motion.section {...fadeInUp} transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }} className="panel-shell relative rounded-[2rem] p-6 md:p-8">
-                            <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-                                <div>
-                                    <div className="section-kicker">Professional journey</div>
-                                    <div className="relative mt-8 space-y-4 pl-6">
-                                        <div className="timeline-line absolute bottom-0 left-0 top-0 w-px" />
-                                        {experience.map((item) => (
-                                            <div key={item.id} className="relative rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
-                                                <div className="absolute left-[-1.9rem] top-6 h-4 w-4 rounded-full border-4 border-surface-950 bg-accent-cyan" />
-                                                <div className="flex flex-wrap items-start justify-between gap-3">
-                                                    <div>
-                                                        <div className="text-sm uppercase tracking-[0.22em] text-slate-400">{item.company}</div>
-                                                        <h3 className="mt-2 text-2xl font-medium text-white">{item.role}</h3>
-                                                    </div>
-                                                    <div className={`rounded-full border px-3 py-1 text-xs uppercase tracking-[0.2em] ${accentStyles[item.accent as keyof typeof accentStyles]}`}>
-                                                        {item.period}
-                                                    </div>
-                                                </div>
-                                                <div className="mt-4 space-y-3">
-                                                    {item.impact.map((point) => (
-                                                        <div key={point} className="flex gap-3 text-sm leading-7 text-slate-300">
-                                                            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent-gold" />
-                                                            <span>{point}</span>
-                                                        </div>
-                                                    ))}
-                                                </div>
+                <section className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
+                    <motion.section {...fadeInUp} className="panel-shell relative rounded-[2rem] p-6 md:p-8">
+                        <SectionHeading
+                            eyebrow="Campaign Log"
+                            title="A professional journey shown like missions and progression."
+                            copy="The gaming influence is visual, but the content stays concrete and readable."
+                        />
+
+                        <div className="relative mt-8 space-y-4 pl-6">
+                            <div className="timeline-line absolute bottom-0 left-0 top-0 w-px" />
+                            {experience.map((item) => (
+                                <div key={item.id} className="relative rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
+                                    <div className="absolute left-[-1.9rem] top-6 h-4 w-4 rounded-full border-4 border-surface-950 bg-accent-cyan" />
+                                    <div className="flex flex-wrap items-start justify-between gap-3">
+                                        <div>
+                                            <div className="text-sm uppercase tracking-[0.22em] text-slate-400">{item.company}</div>
+                                            <h3 className="mt-2 text-2xl font-medium text-white">{item.role}</h3>
+                                        </div>
+                                        <div className={`rounded-full border px-3 py-1 text-xs uppercase tracking-[0.2em] ${accentStyles[item.accent as keyof typeof accentStyles]}`}>
+                                            {item.period}
+                                        </div>
+                                    </div>
+                                    <div className="mt-4 space-y-3">
+                                        {item.impact.map((point) => (
+                                            <div key={point} className="flex gap-3 text-sm leading-7 text-slate-300">
+                                                <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent-gold" />
+                                                <span>{point}</span>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
+                            ))}
+                        </div>
+                    </motion.section>
 
-                                <div className="space-y-5">
-                                    <div>
-                                        <div className="section-kicker">Core strengths</div>
-                                        <div className="mt-5 space-y-4">
-                                            {skills.primary.map((skill, index) => (
-                                                <motion.div
-                                                    key={skill.name}
-                                                    initial={{ opacity: 0, x: 24 }}
-                                                    whileInView={{ opacity: 1, x: 0 }}
-                                                    viewport={{ once: true }}
-                                                    transition={{ delay: index * 0.12, duration: 0.55 }}
-                                                    className="rounded-[1.5rem] border border-white/10 bg-surface-900/65 p-4"
-                                                >
-                                                    <div className="flex items-center justify-between gap-3 text-sm">
-                                                        <span className="font-medium text-white">{skill.name}</span>
-                                                        <span className="font-mono text-slate-400">{skill.level}%</span>
-                                                    </div>
-                                                    <div className="mt-3 h-2 overflow-hidden rounded-full bg-white/8">
-                                                        <div
-                                                            className="h-full rounded-full bg-[linear-gradient(90deg,#7dd3fc,#4f8cff,#f6c453)]"
-                                                            style={{ width: `${skill.level}%` }}
-                                                        />
-                                                    </div>
-                                                </motion.div>
-                                            ))}
-                                        </div>
-                                    </div>
+                    <div className="grid gap-6">
+                        <motion.section {...fadeInUp} transition={{ duration: 0.72, delay: 0.08, ease: 'easeOut' }} className="panel-shell relative rounded-[2rem] p-6 md:p-8">
+                            <SectionHeading eyebrow="Core Stats" title="Strengths displayed like a HUD, not a spreadsheet." />
 
-                                    <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-5">
-                                        <div className="section-kicker">Toolbox</div>
-                                        <div className="mt-5 grid gap-3">
-                                            {skills.inventory.map((item) => (
-                                                <div key={item.name} className="rounded-[1.25rem] border border-white/8 bg-surface-950/60 p-4">
-                                                    <div className="text-sm font-medium uppercase tracking-[0.22em] text-accent-gold">{item.name}</div>
-                                                    <div className="mt-2 text-sm leading-7 text-slate-400">{item.desc}</div>
-                                                </div>
-                                            ))}
+                            <div className="mt-6 space-y-4">
+                                {skills.primary.map((skill, index) => (
+                                    <motion.div
+                                        key={skill.name}
+                                        initial={{ opacity: 0, x: 24 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.12, duration: 0.55 }}
+                                        className="rounded-[1.5rem] border border-white/10 bg-surface-900/65 p-4"
+                                    >
+                                        <div className="flex items-center justify-between gap-3 text-sm">
+                                            <span className="font-medium text-white">{skill.name}</span>
+                                            <span className="font-mono text-slate-400">{skill.level}%</span>
                                         </div>
+                                        <div className="mt-3 h-2 overflow-hidden rounded-full bg-white/8">
+                                            <div
+                                                className="h-full rounded-full bg-[linear-gradient(90deg,#7dd3fc,#4f8cff,#f6c453)]"
+                                                style={{ width: `${skill.level}%` }}
+                                            />
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.section>
+
+                        <motion.section {...fadeInUp} transition={{ duration: 0.72, delay: 0.12, ease: 'easeOut' }} className="panel-shell relative rounded-[2rem] p-6 md:p-8">
+                            <SectionHeading eyebrow="Inventory" title="Tools, platforms, and methods that support the work." />
+
+                            <div className="mt-6 grid gap-3">
+                                {skills.inventory.map((item) => (
+                                    <div key={item.name} className="rounded-[1.25rem] border border-white/8 bg-surface-950/60 p-4">
+                                        <div className="text-sm font-medium uppercase tracking-[0.22em] text-accent-gold">{item.name}</div>
+                                        <div className="mt-2 text-sm leading-7 text-slate-400">{item.desc}</div>
                                     </div>
-                                </div>
+                                ))}
                             </div>
                         </motion.section>
                     </div>
@@ -382,24 +429,22 @@ function App() {
 
                 <motion.section
                     {...fadeInUp}
-                    transition={{ duration: 0.7, delay: 0.12, ease: 'easeOut' }}
-                    className="panel-shell relative overflow-hidden rounded-[2.25rem] p-6 md:p-10"
+                    transition={{ duration: 0.72, delay: 0.12, ease: 'easeOut' }}
+                    className="panel-shell relative overflow-hidden rounded-[2.2rem] p-6 md:p-10"
                 >
                     <img
                         src={profile.cityVisual}
                         alt="Cinematic portfolio background"
-                        className="absolute inset-0 h-full w-full object-cover opacity-[0.18]"
+                        className="absolute inset-0 h-full w-full object-cover opacity-[0.16]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-surface-950 via-surface-900/90 to-surface-950/80" />
                     <div className="relative z-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
                         <div>
-                            <div className="section-kicker">Contact</div>
-                            <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-none text-white md:text-6xl">
-                                A portfolio that introduces the work with personality, but keeps the tone grounded.
-                            </h2>
-                            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
-                                The goal is simple: present a profile that feels thoughtful, credible, and distinctive without becoming loud. The academic achievements are visible where they matter, and the rest of the site stays focused on who I am and how I work.
-                            </p>
+                            <SectionHeading
+                                eyebrow="Open Channel"
+                                title="A distinctive profile with a gaming edge, still ready for serious work."
+                                copy="If the goal is to stand out without losing professionalism, this is the direction: memorable, mobile-friendly, and clearly personal."
+                            />
                         </div>
 
                         <div className="grid gap-3">
