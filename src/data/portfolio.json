@@ -2,7 +2,7 @@
   "profile": {
     "name": "Dino Di Emidio",
     "headline": "Data Scientist & AI Engineer",
-    "tagline": "I work on AI with a strong attention to people, clarity, and real usefulness.",
+    "tagline": "Data science, AI engineering, and a way of building that stays practical and human.",
     "location": "Turin",
     "availability": "Available for AI strategy, applied machine learning, and thoughtful digital collaborations.",
     "portrait": "/images/pic.jpg",
@@ -17,30 +17,30 @@
     }
   },
   "hero": {
-    "eyebrow": "AI Portfolio / Sociology / Applied Intelligence",
-    "titleFirst": "Human understanding.",
-    "titleSecond": "Thoughtful AI.",
-    "intro": "My path moves from sociology to advanced AI systems, with a focus on building solutions that are rigorous, useful, and genuinely understandable for the people who use them.",
-    "quote": "Good technology should feel intelligent, but also clear, respectful, and human.",
+    "eyebrow": "PLAYER PROFILE / DATA SCIENCE / AI ENGINEERING",
+    "titleFirst": "NERD MODE:",
+    "titleSecond": "ON",
+    "intro": "From sociology to advanced AI systems, I work on projects that connect technical depth, clear thinking, and practical execution.",
+    "quote": "Build useful things. Make them clear. Make them work well.",
     "metrics": [
       {
         "value": "Sociology + AI",
-        "label": "A profile that connects human insight with technical depth"
+        "label": "Human context plus technical depth"
       },
       {
         "value": "Research + Delivery",
-        "label": "From academic thinking to practical systems and products"
+        "label": "From research to practical systems"
       },
       {
         "value": "RAG / Agents",
-        "label": "Modern architectures designed for real use cases"
+        "label": "Modern architectures for real use cases"
       }
     ]
   },
   "manifesto": [
-    "I work where intelligence needs both precision and empathy. Sociology shaped the way I read people and systems, while AI gave me the tools to turn that understanding into practical solutions.",
-    "I build retrieval pipelines, multi-agent workflows, decision-support tools, and AI experiences with one simple principle: technology should create clarity, trust, and real value.",
-    "I wanted this portfolio to feel personal, calm, and intentional. Not loud, but memorable."
+    "Sociology shaped how I read people and systems. AI gave me the tools to turn that understanding into practical solutions.",
+    "I build retrieval pipelines, multi-agent workflows, decision-support tools, and AI experiences with a strong focus on clarity and usefulness.",
+    "I like interfaces, systems, and products that feel sharp, reliable, and a little bit nerdy."
   ],
   "education": [
     {

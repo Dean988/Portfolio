@@ -49,7 +49,7 @@ function SectionHeading({ eyebrow, title, copy }: { eyebrow: string; title: stri
     return (
         <div className="max-w-2xl">
             <div className="section-kicker">{eyebrow}</div>
-            <h2 className="mt-3 font-display text-3xl font-semibold leading-none text-white md:text-5xl">{title}</h2>
+            <h2 className="pixel-heading mt-3 text-2xl leading-tight text-white md:text-4xl">{title}</h2>
             {copy ? <p className="mt-4 text-sm leading-7 text-slate-400 md:text-base md:leading-8">{copy}</p> : null}
         </div>
     );
@@ -84,6 +84,7 @@ function App() {
             <div className="absolute inset-0 pointer-events-none">
                 <div className="grid-overlay absolute inset-0 opacity-[0.16]" />
                 <div className="noise-overlay absolute inset-0" />
+                <div className="crt-overlay absolute inset-0 opacity-20" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.08),transparent_35%),radial-gradient(circle_at_bottom,rgba(246,196,83,0.06),transparent_32%)]" />
                 <div className="spotlight absolute left-[-18rem] top-[-12rem] h-[36rem] w-[36rem] rounded-full blur-3xl" />
                 <div className="absolute bottom-[-14rem] right-[-10rem] h-[28rem] w-[28rem] rounded-full bg-accent-blue/10 blur-3xl" />
@@ -92,8 +93,8 @@ function App() {
             <header className="sticky top-0 z-40 border-b border-white/10 bg-surface-950/75 backdrop-blur-2xl">
                 <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 md:px-8">
                     <div className="flex min-w-0 items-center gap-3">
-                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/5 shadow-[0_0_30px_rgba(125,211,252,0.12)]">
-                            <span className="font-display text-2xl font-bold text-shimmer">D</span>
+                        <div className="retro-badge flex h-11 w-11 shrink-0 items-center justify-center rounded-none border border-white/15 bg-white/5 shadow-[0_0_30px_rgba(125,211,252,0.12)]">
+                            <span className="pixel-mini text-shimmer">D</span>
                         </div>
                         <div className="min-w-0">
                             <div className="truncate text-sm font-medium tracking-wide text-white">{profile.name}</div>
@@ -105,7 +106,7 @@ function App() {
                         {skills.badges.map((badge) => (
                             <div
                                 key={badge.id}
-                                className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] tracking-[0.08em] text-slate-300"
+                                className="retro-chip px-4 py-2 text-[11px] tracking-[0.08em] text-slate-300"
                             >
                                 {badge.title}
                             </div>
@@ -114,7 +115,7 @@ function App() {
 
                     <a
                         href={`mailto:${profile.socials.email}`}
-                        className="inline-flex shrink-0 items-center gap-2 rounded-full border border-accent-cyan/30 bg-accent-cyan/10 px-3 py-2 text-sm text-accent-cyan transition hover:border-accent-cyan/50 hover:bg-accent-cyan/15 md:px-4"
+                        className="pixel-button inline-flex shrink-0 items-center gap-2 px-3 py-2 text-sm text-accent-cyan transition md:px-4"
                     >
                         <Mail size={16} />
                         <span className="hidden sm:inline">Contact</span>
@@ -124,7 +125,7 @@ function App() {
 
             <main className="relative z-10 mx-auto flex max-w-7xl flex-col gap-5 px-4 pb-16 pt-6 md:gap-8 md:px-8 md:pt-10">
                 <section className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr] lg:gap-6">
-                    <motion.div {...fadeInUp} className="panel-shell relative overflow-hidden rounded-[2rem] p-6 md:p-10">
+                    <motion.div {...fadeInUp} className="panel-shell retro-frame relative overflow-hidden rounded-[2rem] p-6 md:p-10">
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(125,211,252,0.14),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(79,140,255,0.14),transparent_34%)]" />
                         <div className="relative z-10">
                             <div className="flex flex-wrap items-center gap-3">
@@ -132,17 +133,17 @@ function App() {
                             </div>
 
                             <div className="mt-6 flex flex-wrap gap-3">
-                                <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-slate-300 md:text-xs md:tracking-[0.24em]">
+                                <div className="retro-chip inline-flex items-center gap-2 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-slate-300 md:text-xs md:tracking-[0.24em]">
                                     <MapPin size={14} className="text-accent-cyan" />
                                     {profile.location}
                                 </div>
                             </div>
 
-                            <div className="mt-5 text-sm font-medium tracking-[0.14em] text-accent-cyan md:text-base">
+                            <div className="pixel-role mt-5 text-accent-cyan">
                                 {profile.headline}
                             </div>
 
-                            <h1 className="mt-8 max-w-4xl text-[2.9rem] font-bold leading-[0.93] text-white sm:text-6xl md:text-7xl xl:text-[5.8rem]">
+                            <h1 className="pixel-hero mt-8 max-w-4xl text-white">
                                 {hero.titleFirst}
                                 <br />
                                 <span className="text-shimmer">{hero.titleSecond}</span>
@@ -164,7 +165,7 @@ function App() {
                                             whileInView={{ opacity: 1, y: 0 }}
                                             viewport={{ once: true }}
                                             transition={{ delay: 0.1 * index, duration: 0.55 }}
-                                            className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4"
+                                            className="retro-card rounded-[1.5rem] p-4"
                                         >
                                             <div className="text-xl font-semibold text-white">{item.value}</div>
                                             <div className="mt-2 text-sm leading-6 text-slate-400">{item.label}</div>
@@ -175,7 +176,7 @@ function App() {
                             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                                 <a
                                     href={`mailto:${profile.socials.email}`}
-                                    className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-surface-950 transition hover:translate-y-[-1px]"
+                                    className="pixel-button inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-surface-950 transition hover:translate-y-[-1px]"
                                 >
                                     Let's talk
                                     <ArrowRight size={16} />
@@ -184,7 +185,7 @@ function App() {
                                     href={profile.socials.linkedin}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm text-slate-200 transition hover:border-accent-cyan/40 hover:text-white"
+                                    className="retro-chip inline-flex items-center justify-center gap-2 px-6 py-3 text-sm text-slate-200 transition hover:border-accent-cyan/40 hover:text-white"
                                 >
                                     <Linkedin size={16} />
                                     LinkedIn
@@ -193,7 +194,7 @@ function App() {
                                     href={profile.socials.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm text-slate-200 transition hover:border-accent-gold/40 hover:text-white"
+                                    className="retro-chip inline-flex items-center justify-center gap-2 px-6 py-3 text-sm text-slate-200 transition hover:border-accent-gold/40 hover:text-white"
                                 >
                                     <Github size={16} />
                                     GitHub
@@ -205,7 +206,7 @@ function App() {
                     <motion.aside
                         {...fadeInUp}
                         transition={{ duration: 0.75, delay: 0.15, ease: 'easeOut' }}
-                        className="panel-shell relative overflow-hidden rounded-[2rem] p-4 md:p-5"
+                        className="panel-shell retro-frame relative overflow-hidden rounded-[2rem] p-4 md:p-5"
                     >
                         <div className="absolute inset-0">
                             <img
@@ -217,7 +218,7 @@ function App() {
                         </div>
 
                         <div className="relative z-10 flex h-full flex-col gap-4 lg:min-h-[38rem]">
-                            <div className="flex items-start justify-between gap-4 rounded-[1.5rem] border border-white/10 bg-black/20 p-4 backdrop-blur-md">
+                            <div className="retro-card flex items-start justify-between gap-4 rounded-[1.5rem] p-4">
                                 <div>
                                     <div className="section-kicker">Player Profile</div>
                                     <p className="mt-2 text-sm leading-7 text-slate-300">{profile.availability}</p>
@@ -225,10 +226,10 @@ function App() {
                                 <ShieldCheck className="mt-1 shrink-0 text-accent-gold" />
                             </div>
 
-                            <div className="panel-shell relative overflow-hidden rounded-[1.8rem] p-3">
-                                <div className="absolute inset-x-3 top-3 flex items-center justify-between rounded-full border border-white/10 bg-surface-950/70 px-4 py-2 text-[10px] tracking-[0.14em] text-slate-300 md:text-[11px] md:tracking-[0.18em]">
-                                    <span>Current Build</span>
-                                    <span className="text-accent-cyan">AI and Sociology</span>
+                            <div className="panel-shell retro-frame relative overflow-hidden rounded-[1.8rem] p-3">
+                                <div className="absolute inset-x-3 top-3 flex items-center justify-between border border-white/10 bg-surface-950/80 px-4 py-2 text-[10px] tracking-[0.14em] text-slate-300 md:text-[11px] md:tracking-[0.18em]">
+                                    <span>PLAYER CARD</span>
+                                    <span className="text-accent-cyan">LV. DATA + AI</span>
                                 </div>
                                 <img
                                     src={profile.portrait}
@@ -241,7 +242,7 @@ function App() {
                                 {signalCards.map((card) => {
                                     const Icon = card.icon;
                                     return (
-                                        <div key={card.title} className="panel-shell relative rounded-[1.45rem] p-4">
+                                        <div key={card.title} className="panel-shell retro-card relative rounded-[1.45rem] p-4">
                                             <div className="flex items-center justify-between gap-3">
                                                 <div className="section-kicker">{card.title}</div>
                                                 <Icon size={18} className="text-accent-cyan" />
@@ -260,7 +261,7 @@ function App() {
                     <SectionHeading
                         eyebrow="Achievements"
                         title="Education presented like milestones, with the tone kept clean."
-                        copy="The academic path stays visible and easy to read, without letting the rest of the profile revolve around it."
+                        copy=""
                     />
 
                     <div className="mt-6 grid gap-4 md:grid-cols-3">
@@ -271,7 +272,7 @@ function App() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3 }}
                                 transition={{ delay: index * 0.12, duration: 0.65 }}
-                                className="panel-shell relative overflow-hidden rounded-[2rem] p-6"
+                                className="panel-shell retro-frame relative overflow-hidden rounded-[2rem] p-6"
                             >
                                 <div className="absolute right-4 top-4 rounded-full border border-accent-gold/25 bg-accent-gold/10 px-4 py-1 text-sm font-medium text-accent-gold">
                                     {item.grade}
@@ -291,8 +292,8 @@ function App() {
                     <motion.section {...fadeInUp} transition={{ duration: 0.72, delay: 0.1, ease: 'easeOut' }} className="panel-shell relative rounded-[2rem] p-6 md:p-8">
                         <SectionHeading
                             eyebrow="Loadout"
-                            title="Professional capabilities, framed like a clean game interface."
-                            copy="The goal is to feel distinctive on mobile and desktop without losing seriousness."
+                            title="Skills and services shown like a retro loadout screen."
+                            copy=""
                         />
 
                         <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -306,7 +307,7 @@ function App() {
                                             whileInView={{ opacity: 1, y: 0 }}
                                             viewport={{ once: true }}
                                             transition={{ delay: index * 0.1, duration: 0.55 }}
-                                            className="group rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-5 transition hover:border-accent-cyan/30 hover:bg-white/[0.06]"
+                                            className="group retro-card rounded-[1.75rem] p-5 transition hover:border-accent-cyan/30 hover:bg-white/[0.06]"
                                         >
                                             <div className="flex items-center justify-between gap-4">
                                                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-surface-900/80 text-accent-cyan">
@@ -322,18 +323,12 @@ function App() {
                         </div>
                     </motion.section>
 
-                    <motion.section {...fadeInUp} className="panel-shell relative overflow-hidden rounded-[2rem] p-6 md:p-8">
-                        <img
-                            src={profile.heroVisual}
-                            alt="Retro interface visual"
-                            className="absolute inset-0 h-full w-full object-cover opacity-10"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-br from-surface-900/80 via-surface-900/65 to-surface-950/92" />
+                    <motion.section {...fadeInUp} className="panel-shell retro-frame relative overflow-hidden rounded-[2rem] p-6 md:p-8">
                         <div className="relative z-10">
                             <SectionHeading
-                                eyebrow="System Notes"
-                                title="Short notes about how I approach the work."
-                                copy="Same content, but presented as useful context instead of a separate manifesto section."
+                                eyebrow="Terminal Log"
+                                title="A few clean notes about how I work."
+                                copy=""
                             />
 
                             <div className="mt-8 grid gap-3">
@@ -344,9 +339,9 @@ function App() {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.08, duration: 0.45 }}
-                                        className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4"
+                                        className="retro-card rounded-[1.5rem] p-4"
                                     >
-                                        <div className="section-kicker">Note {index + 1}</div>
+                                        <div className="section-kicker">Log {index + 1}</div>
                                         <p className="mt-3 text-sm leading-7 text-slate-300">{paragraph}</p>
                                     </motion.div>
                                 ))}
@@ -359,14 +354,14 @@ function App() {
                     <motion.section {...fadeInUp} className="panel-shell relative rounded-[2rem] p-6 md:p-8">
                         <SectionHeading
                             eyebrow="Campaign Log"
-                            title="A professional journey shown like missions and progression."
-                            copy="The gaming influence is visual, but the content stays concrete and readable."
+                            title="Career history shown like quests and mission logs."
+                            copy=""
                         />
 
                         <div className="relative mt-8 space-y-4 pl-6">
                             <div className="timeline-line absolute bottom-0 left-0 top-0 w-px" />
                             {experience.map((item) => (
-                                <div key={item.id} className="relative rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
+                                <div key={item.id} className="retro-card relative rounded-[1.5rem] p-5">
                                     <div className="absolute left-[-1.9rem] top-6 h-4 w-4 rounded-full border-4 border-surface-950 bg-accent-cyan" />
                                     <div className="flex flex-wrap items-start justify-between gap-3">
                                         <div>
@@ -392,7 +387,7 @@ function App() {
 
                     <div className="grid gap-6">
                         <motion.section {...fadeInUp} transition={{ duration: 0.72, delay: 0.08, ease: 'easeOut' }} className="panel-shell relative rounded-[2rem] p-6 md:p-8">
-                            <SectionHeading eyebrow="Core Stats" title="Strengths displayed like a HUD, not a spreadsheet." />
+                            <SectionHeading eyebrow="Core Stats" title="Strengths displayed like a retro HUD." />
 
                             <div className="mt-6 space-y-4">
                                 {skills.primary.map((skill, index) => (
@@ -402,7 +397,7 @@ function App() {
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.12, duration: 0.55 }}
-                                        className="rounded-[1.5rem] border border-white/10 bg-surface-900/65 p-4"
+                                        className="retro-card rounded-[1.5rem] p-4"
                                     >
                                         <div className="flex items-center justify-between gap-3 text-sm">
                                             <span className="font-medium text-white">{skill.name}</span>
@@ -420,11 +415,11 @@ function App() {
                         </motion.section>
 
                         <motion.section {...fadeInUp} transition={{ duration: 0.72, delay: 0.12, ease: 'easeOut' }} className="panel-shell relative rounded-[2rem] p-6 md:p-8">
-                            <SectionHeading eyebrow="Inventory" title="Tools, platforms, and methods that support the work." />
+                            <SectionHeading eyebrow="Inventory" title="Tools, platforms, and methods in the current build." />
 
                             <div className="mt-6 grid gap-3">
                                 {skills.inventory.map((item) => (
-                                    <div key={item.name} className="rounded-[1.25rem] border border-white/8 bg-surface-950/60 p-4">
+                                    <div key={item.name} className="retro-card rounded-[1.25rem] p-4">
                                         <div className="text-sm font-medium uppercase tracking-[0.22em] text-accent-gold">{item.name}</div>
                                         <div className="mt-2 text-sm leading-7 text-slate-400">{item.desc}</div>
                                     </div>
@@ -450,15 +445,15 @@ function App() {
                         <div>
                             <SectionHeading
                                 eyebrow="Open Channel"
-                                title="A distinctive profile with a gaming edge, still ready for serious work."
-                                copy="If the goal is to stand out without losing professionalism, this is the direction: memorable, mobile-friendly, and clearly personal."
+                                title="Contact links ready for the next quest."
+                                copy=""
                             />
                         </div>
 
                         <div className="grid gap-3">
                             <a
                                 href={`mailto:${profile.socials.email}`}
-                                className="inline-flex items-center justify-between rounded-[1.4rem] border border-accent-cyan/25 bg-accent-cyan/10 px-5 py-4 text-sm text-white transition hover:border-accent-cyan/45"
+                                className="retro-chip inline-flex items-center justify-between px-5 py-4 text-sm text-white transition hover:border-accent-cyan/45"
                             >
                                 <span className="flex min-w-0 items-center gap-3 overflow-hidden">
                                     <Mail size={18} className="shrink-0 text-accent-cyan" />
@@ -470,7 +465,7 @@ function App() {
                                 href={profile.socials.linkedin}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-between rounded-[1.4rem] border border-white/10 bg-white/[0.05] px-5 py-4 text-sm text-slate-200 transition hover:border-white/20"
+                                className="retro-chip inline-flex items-center justify-between px-5 py-4 text-sm text-slate-200 transition hover:border-white/20"
                             >
                                 <span className="flex items-center gap-3">
                                     <Linkedin size={18} className="text-accent-gold" />
@@ -482,7 +477,7 @@ function App() {
                                 href={profile.socials.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-between rounded-[1.4rem] border border-white/10 bg-white/[0.05] px-5 py-4 text-sm text-slate-200 transition hover:border-white/20"
+                                className="retro-chip inline-flex items-center justify-between px-5 py-4 text-sm text-slate-200 transition hover:border-white/20"
                             >
                                 <span className="flex items-center gap-3">
                                     <Github size={18} className="text-accent-cyan" />
@@ -501,7 +496,7 @@ function App() {
                 transition={{ delay: 0.35, duration: 0.55, ease: 'easeOut' }}
                 className="fixed bottom-4 left-1/2 z-50 w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 lg:hidden"
             >
-                <div className="panel-shell mobile-dock relative rounded-[1.8rem] px-2 py-2">
+                <div className="panel-shell mobile-dock retro-frame relative rounded-[1.8rem] px-2 py-2">
                     <div className="flex items-center justify-between gap-1">
                         {dockItems.map((item) => {
                             const Icon = item.icon;
@@ -511,9 +506,9 @@ function App() {
                                     key={item.label}
                                     href={item.href}
                                     whileTap={{ scale: 0.94 }}
-                                    className="flex min-w-0 flex-1 flex-col items-center gap-1 rounded-[1.2rem] px-2 py-2 text-center text-[11px] text-slate-300 transition hover:bg-white/8 hover:text-white"
+                                    className="flex min-w-0 flex-1 flex-col items-center gap-1 rounded-none px-2 py-2 text-center text-[11px] text-slate-300 transition hover:bg-white/8 hover:text-white"
                                 >
-                                    <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06]">
+                                    <div className="retro-badge flex h-9 w-9 items-center justify-center border border-white/10 bg-white/[0.06]">
                                         <Icon size={16} />
                                     </div>
                                     <span className="truncate">{item.label}</span>
